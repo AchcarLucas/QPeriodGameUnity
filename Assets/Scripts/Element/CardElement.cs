@@ -28,7 +28,7 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
         Internal Events
     */
 
-    void Awake()
+    void Start()
     {
         CardAnimator = gameObject.GetComponent<Animator>();
 

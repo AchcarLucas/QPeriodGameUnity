@@ -6,6 +6,8 @@ public static class Creator
 {
     public static List<Element> CreateChemicalElements()
     {
+        Debug.Log("[Creator] - CreateChemicalElements");
+
         List<Element> elements = new List<Element>();
 
         // column, line, atomicNumber, elementName, elementSymbol, typeMaterial

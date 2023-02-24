@@ -9,7 +9,10 @@ public class CardSystem : MonoBehaviour
 
     public void Awake()
     {
-        List<Element> elements = EManager.ChemicalElements;
+        List<Element> elements = ElementManager.ChemicalElements;
+
+        Debug.Log("Instantiate " + elements.Count + " element(s) card");
+
         foreach(Element element in elements) {
             // cria a instancia da carta
             GameObject card = GameObject.Instantiate(ElementCardTemplate, this.transform);
