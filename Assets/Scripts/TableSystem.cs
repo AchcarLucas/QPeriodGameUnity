@@ -4,5 +4,12 @@ using UnityEngine;
 
 public class TableSystem : MonoBehaviour
 {
-    
+    [SerializeField]
+    public GameObject OutlineElementChild;
+    public GameObject ElementChild;
+
+    public void Awake()
+    {
+
+    }
 }

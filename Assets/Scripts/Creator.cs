@@ -6,6 +6,6 @@ public static class Creator
 {
     public static List<Element> createElements()
     {
-
+        return new List<Element>();
     }
 }
