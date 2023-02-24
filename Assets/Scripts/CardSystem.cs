@@ -12,10 +12,9 @@ public class CardSystem : MonoBehaviour, ISelectHandler, IDeselectHandler
     const int MAX_ATTEMPT = 5;
 
     [SerializeField]
+    public Element currentElement;
     public Settings.Status currentStatus = Settings.Status.NONE;
     public Settings.TypeMaterial typeMaterial = Settings.TypeMaterial.Metallic;
-
-    public string elementSymbol = "H";
 
     public TMP_Text attemptValueText;
     public TMP_Text elementSymbolText;
@@ -68,7 +67,7 @@ public class CardSystem : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void SetElementSymbolText()
     {
-        elementSymbolText.text = elementSymbol;
+        elementSymbolText.text = currentElement.Symbol;
     }
 
     public string GetElementSymbolText()

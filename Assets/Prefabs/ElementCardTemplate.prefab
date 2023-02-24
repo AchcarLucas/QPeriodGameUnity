@@ -715,9 +715,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45cab8d45ec41443a9d679628f9de4cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentElement:
+    Column: 0
+    Line: 0
+    AtomicNumber: 0
+    Name: Test
+    Symbol: H
+    ElementColor: {r: 0, g: 0, b: 0, a: 0}
   currentStatus: 0
   typeMaterial: 0
-  elementSymbol: H
   attemptValueText: {fileID: 8915453793145275888}
   elementSymbolText: {fileID: 4022469066469992674}
   front: {fileID: 3904705307958794929}
