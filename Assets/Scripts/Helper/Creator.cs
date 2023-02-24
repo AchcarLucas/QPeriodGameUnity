@@ -12,6 +12,12 @@ public static class Creator
 
         // column, line, atomicNumber, elementName, elementSymbol, typeMaterial
         elements.Add(new Element(1, 1, 1, "Hidrogênio", "H", Settings.TypeMaterial.Gas));
+        elements.Add(new Element(1, 2, 3, "Lítio", "Li", Settings.TypeMaterial.Metallic));
+        elements.Add(new Element(1, 3, 11, "Sódio", "Na", Settings.TypeMaterial.Metallic));
+        elements.Add(new Element(1, 4, 19, "Potássio", "K", Settings.TypeMaterial.Metallic));
+        elements.Add(new Element(1, 5, 37, "Rubídio", "Rb", Settings.TypeMaterial.Metallic));
+        elements.Add(new Element(1, 6, 55, "Césio", "Cs", Settings.TypeMaterial.Metallic));
+        elements.Add(new Element(1, 7, 87, "Frâncio", "Fr", Settings.TypeMaterial.Metallic));
 
         elements.Add(new Element(18, 1, 2, "Hélio", "He", Settings.TypeMaterial.Gas));
         elements.Add(new Element(18, 2, 10, "Neônio", "Ne", Settings.TypeMaterial.Gas));
@@ -20,6 +26,9 @@ public static class Creator
         elements.Add(new Element(18, 5, 54, "Xenônio", "Xe", Settings.TypeMaterial.Gas));
         elements.Add(new Element(18, 6, 86, "Radônio", "Rn", Settings.TypeMaterial.Gas));
         elements.Add(new Element(18, 7, 118, "Oganessônio", "Og", Settings.TypeMaterial.Gas));
+
+
+        
 
         return elements;
     }
