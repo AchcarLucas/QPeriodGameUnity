@@ -1,28 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
+
 using TMPro;
 
-public class CardSystem : MonoBehaviour, IPointerClickHandler
+public class CardSystem : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
     const int MAX_ATTEMPT = 5;
-    const int AFFECTIVE_CLICK = 1;
-
-    public enum Status
-    {
-        NONE,
-        FAILED,
-        SUCCESS
-    }
 
     [SerializeField]
-    public Status currentStatus = Status.NONE;
+    public Settings.Status currentStatus = Settings.Status.NONE;
+    public Settings.TypeMaterial typeMaterial = Settings.TypeMaterial.Metallic;
 
     public string elementSymbol = "H";
 
     public TMP_Text attemptValueText;
     public TMP_Text elementSymbolText;
+
+    public Image front;
 
     private int currentAttempt = MAX_ATTEMPT;
     private Animator animator;
@@ -34,21 +32,33 @@ public class CardSystem : MonoBehaviour, IPointerClickHandler
     void Awake()
     {
         animator = gameObject.GetComponent<Animator>();
+
+        ChangeColor();
+
         SetAttemptText();
         SetElementSymbolText();
     }
 
-    public void OnPointerClick(PointerEventData EventData)
+    public void OnSelect(BaseEventData eventData)
     {
-        if (EventData.clickCount == AFFECTIVE_CLICK && currentStatus == Status.NONE) {
-            GameManager.Instance.ObjectSelectedCardElement = gameObject;
-            TriggerSelected();
-        }
+        TriggerSelected();
+        GameManager.Instance.ObjectSelectedCardElement = gameObject;
+    }
+
+    public void OnDeselect(BaseEventData data)
+    {
+        TriggerUnselected();
+        GameManager.Instance.ObjectSelectedCardElement = null;
     }
 
     /*
        Generic Functions
     */
+
+    public void ChangeColor()
+    {
+        front.color = Settings.GetMaterialColor(typeMaterial);
+    }
 
     public int CalculateScore()
     {
@@ -73,7 +83,7 @@ public class CardSystem : MonoBehaviour, IPointerClickHandler
 
     public void HitAttempt()
     {
-        if(currentStatus == Status.NONE) {
+        if(currentStatus == Settings.Status.NONE) {
             this.currentAttempt--;
 
             if(this.currentAttempt <= 0) {
@@ -90,15 +100,20 @@ public class CardSystem : MonoBehaviour, IPointerClickHandler
         this.animator.SetTrigger("Selected");
     }
 
+    public void TriggerUnselected()
+    {
+        this.animator.SetTrigger("Unselected");
+    }
+
     public void ActiveFailed()
     {
         this.animator.SetBool("Failed", true);
-        currentStatus = Status.FAILED;
+        currentStatus = Settings.Status.FAILED;
     }
 
     public void ActiveSuccess()
     {
         this.animator.SetBool("Success", true);
-        currentStatus = Status.SUCCESS;
+        currentStatus = Settings.Status.SUCCESS;
     }
 }
