@@ -9,6 +9,11 @@ public class ElementManager : MonoBehaviour
     public List<Element> ChemicalElements = new List<Element>();
 
     private void Awake() {
+        if(Instance != null) {
+            Destroy(gameObject);
+            return;
+        }
+        
         Instance = this;
     }
 }

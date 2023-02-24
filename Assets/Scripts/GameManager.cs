@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
     public GameObject ObjectSelectedElementTable;
 
     private void Awake() {
+        if(Instance != null) {
+            Destroy(gameObject);
+            return;
+        }
+        
         Instance = this;
     }
 }
