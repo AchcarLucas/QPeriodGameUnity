@@ -7,12 +7,13 @@ using UnityEngine.EventSystems;
 
 using TMPro;
 
-public class CardSystem : MonoBehaviour, ISelectHandler, IDeselectHandler
+public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
     const int MAX_ATTEMPT = 5;
 
     [SerializeField]
-    public Element currentElement;
+    public Element ownElement;
+    
     public Settings.Status currentStatus = Settings.Status.NONE;
     public Settings.TypeMaterial typeMaterial = Settings.TypeMaterial.Metallic;
 
@@ -67,7 +68,7 @@ public class CardSystem : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void SetElementSymbolText()
     {
-        elementSymbolText.text = currentElement.elementSymbol;
+        elementSymbolText.text = ownElement.elementSymbol;
     }
 
     public string GetElementSymbolText()
