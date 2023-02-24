@@ -6,6 +6,11 @@ public static class Creator
 {
     public static List<Element> createElements()
     {
-        return new List<Element>();
+        List<Element> elements = new List<Element>();
+
+        // column, line, atomicNumber, elementName, elementSymbol, typeMaterial
+        elements.Add(new Element(0, 0, 1, "Hidrogênio", "H", Settings.TypeMaterial.Gas));
+
+        return elements;
     }
 }

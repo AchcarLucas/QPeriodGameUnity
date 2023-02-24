@@ -67,7 +67,7 @@ public class CardSystem : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void SetElementSymbolText()
     {
-        elementSymbolText.text = currentElement.Symbol;
+        elementSymbolText.text = currentElement.elementSymbol;
     }
 
     public string GetElementSymbolText()
