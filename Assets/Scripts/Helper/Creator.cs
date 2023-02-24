@@ -27,9 +27,6 @@ public static class Creator
         elements.Add(new Element(18, 6, 86, "Radônio", "Rn", Settings.TypeMaterial.Gas));
         elements.Add(new Element(18, 7, 118, "Oganessônio", "Og", Settings.TypeMaterial.Gas));
 
-
-        
-
         return elements;
     }
 }

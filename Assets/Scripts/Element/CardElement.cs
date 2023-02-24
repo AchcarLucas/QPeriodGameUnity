@@ -19,8 +19,6 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
     public TMP_Text AttemptValueText;
     public TMP_Text ElementSymbolText;
 
-    public Image Front;
-
     private int CurrentAttempt = MAX_ATTEMPT;
     private Animator CardAnimator;
 
@@ -31,8 +29,6 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
     void Start()
     {
         CardAnimator = gameObject.GetComponent<Animator>();
-
-        ChangeColor();
 
         SetAttemptText();
         SetElementSymbolText();
@@ -53,11 +49,6 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
     /*
        Generic Functions
     */
-
-    public void ChangeColor()
-    {
-        Front.color = Settings.GetMaterialColor(OwnElement.TMaterial);
-    }
 
     public int CalculateScore()
     {
