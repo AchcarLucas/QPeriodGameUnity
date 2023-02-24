@@ -14,32 +14,30 @@ public class Settings
     public enum TypeMaterial
     {
         Default,
-        Metallic,
-        Radioactive,
-        Liquid,
-        Gas
+        NotMetal,
+        NobleGases,
+        AlkalineMetal,
+        AlkalineEarthMetal,
+        SemiMetal,
+        Halogens,
+        TransitionMetal,
+        Actinidia,
+        Lanthanides,
+        Others
     }
 
-    static public Color MetallicColor = new Color(0, 0, 0, 0.8f);
-    static public Color RadioactiveColor = new Color(0, 1, 0, 0.8f);
-    static public Color LiquidColor = new Color(0, 0.36f, 1, 0.8f);
-    static public Color GasColor = new Color(1, 0.8f, 0, 0.8f);
-    static public Color Default = new Color(1, 1, 1, 0.8f);
+    static public Color NotMetalColor = new Color(0, 1.0f, 0, 0.8f);
+    static public Color DefaultColor = new Color(1, 1, 1, 0.8f);
 
     static public Color GetMaterialColor(TypeMaterial typeMaterial)
     {
         switch (typeMaterial)
         {
-            case TypeMaterial.Metallic:
-                return MetallicColor;
-            case TypeMaterial.Radioactive:
-                return RadioactiveColor;
-            case TypeMaterial.Liquid:
-                return LiquidColor;
-            case TypeMaterial.Gas:
-                return GasColor;
+            case TypeMaterial.NotMetal:
+                return NotMetalColor;
+            
             default:
-                return Default;
+                return DefaultColor;
         }
     }
 }
