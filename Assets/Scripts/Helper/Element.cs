@@ -5,29 +5,29 @@ using UnityEngine;
 [System.Serializable]
 public class Element
 {
-    public int column;
-    public int line;
-    public int atomicNumber;
+    public int Column;
+    public int Line;
+    public int AtomicNumber;
 
-    public string elementName; 
-    public string elementSymbol;
+    public string ElementName; 
+    public string ElementSymbol;
 
-    public Settings.TypeMaterial typeMaterial;
+    public Settings.TypeMaterial TMaterial;
 
     public Element(
-                        int column, 
-                        int line, 
-                        int atomicNumber, 
-                        string elementName, 
-                        string elementSymbol, 
-                        Settings.TypeMaterial typeMaterial
+                        int Column, 
+                        int Line, 
+                        int AtomicNumber, 
+                        string ElementName, 
+                        string ElementSymbol, 
+                        Settings.TypeMaterial TMaterial
                         )
     {
-        this.column = column;
-        this.line = line;
-        this.atomicNumber = atomicNumber;
-        this.elementName = elementName;
-        this.elementSymbol = elementSymbol;
-        this.typeMaterial = typeMaterial;
+        this.Column = Column;
+        this.Line = Line;
+        this.AtomicNumber = AtomicNumber;
+        this.ElementName = ElementName;
+        this.ElementSymbol = ElementSymbol;
+        this.TMaterial = TMaterial;
     }
 }

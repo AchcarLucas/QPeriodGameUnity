@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class ElementManager : MonoBehaviour
 {
     public static ElementManager Instance;
 
-    public List<Element> ChemicalElements = new List<Element>();
+    public List<Element> ChemicalElements;
 
     private void Awake() {
         if(Instance != null) {
@@ -15,5 +16,7 @@ public class ElementManager : MonoBehaviour
         }
         
         Instance = this;
+
+        ChemicalElements = Creator.CreateChemicalElements();
     }
 }

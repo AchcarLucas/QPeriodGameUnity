@@ -12,18 +12,17 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
     const int MAX_ATTEMPT = 5;
 
     [SerializeField]
-    public Element ownElement;
+    public Element OwnElement;
     
-    public Settings.Status currentStatus = Settings.Status.NONE;
-    public Settings.TypeMaterial typeMaterial = Settings.TypeMaterial.Metallic;
+    public Settings.Status CurrentStatus = Settings.Status.NONE;
 
-    public TMP_Text attemptValueText;
-    public TMP_Text elementSymbolText;
+    public TMP_Text AttemptValueText;
+    public TMP_Text ElementSymbolText;
 
-    public Image front;
+    public Image Front;
 
-    private int currentAttempt = MAX_ATTEMPT;
-    private Animator animator;
+    private int CurrentAttempt = MAX_ATTEMPT;
+    private Animator CardAnimator;
 
     /*
         Internal Events
@@ -31,7 +30,7 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     void Awake()
     {
-        animator = gameObject.GetComponent<Animator>();
+        CardAnimator = gameObject.GetComponent<Animator>();
 
         ChangeColor();
 
@@ -57,38 +56,38 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void ChangeColor()
     {
-        front.color = Settings.GetMaterialColor(typeMaterial);
+        Front.color = Settings.GetMaterialColor(OwnElement.TMaterial);
     }
 
     public int CalculateScore()
     {
         // O score é calculado em potência de 2
-        return (int)Mathf.Pow(2, currentAttempt);
+        return (int)Mathf.Pow(2, CurrentAttempt);
     }
 
     public void SetElementSymbolText()
     {
-        elementSymbolText.text = ownElement.elementSymbol;
+        ElementSymbolText.text = OwnElement.ElementSymbol;
     }
 
     public string GetElementSymbolText()
     {
-        return elementSymbolText.text;
+        return ElementSymbolText.text;
     }
 
     public void SetAttemptText()
     {
-        attemptValueText.text = this.currentAttempt + "/" + MAX_ATTEMPT;
+        AttemptValueText.text = this.CurrentAttempt + "/" + MAX_ATTEMPT;
     }
 
     public void HitAttempt()
     {
-        if(currentStatus == Settings.Status.NONE) {
-            this.currentAttempt--;
+        if(CurrentStatus == Settings.Status.NONE) {
+            this.CurrentAttempt--;
 
-            if(this.currentAttempt <= 0) {
+            if(this.CurrentAttempt <= 0) {
                 ActiveFailed();
-                this.currentAttempt = 0;
+                this.CurrentAttempt = 0;
             }
         }
         
@@ -97,23 +96,23 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void TriggerSelected()
     {
-        this.animator.SetTrigger("Selected");
+        this.CardAnimator.SetTrigger("Selected");
     }
 
     public void TriggerUnselected()
     {
-        this.animator.SetTrigger("Unselected");
+        this.CardAnimator.SetTrigger("Unselected");
     }
 
     public void ActiveFailed()
     {
-        this.animator.SetBool("Failed", true);
-        currentStatus = Settings.Status.FAILED;
+        this.CardAnimator.SetBool("Failed", true);
+        CurrentStatus = Settings.Status.FAILED;
     }
 
     public void ActiveSuccess()
     {
-        this.animator.SetBool("Success", true);
-        currentStatus = Settings.Status.SUCCESS;
+        this.CardAnimator.SetBool("Success", true);
+        CurrentStatus = Settings.Status.SUCCESS;
     }
 }

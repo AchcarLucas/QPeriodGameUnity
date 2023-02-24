@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class Creator
 {
-    public static List<Element> createChemicalElements()
+    public static List<Element> CreateChemicalElements()
     {
         List<Element> elements = new List<Element>();
 
