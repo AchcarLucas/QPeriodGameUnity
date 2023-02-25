@@ -37,9 +37,9 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
     {
         CardAnimator = gameObject.GetComponent<Animator>();
 
-        SetAttemptText();
-        SetElementSymbolText();
-        SetElementNameText();
+        EditAttemptText();
+        EditElementSymbolText();
+        EditElementNameText();
 
         Front.color = Settings.GetMaterialColor(OwnStructChemicalElement.TMaterial);
     }
@@ -66,7 +66,7 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
         return (int)Mathf.Pow(2, CurrentAttempt);
     }
 
-    public void SetElementSymbolText(string text = null)
+    public void EditElementSymbolText(string text = null)
     {
         if(text != null)
             ElementNameText.text = text;
@@ -74,7 +74,7 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
             ElementSymbolText.text = OwnStructChemicalElement.ElementSymbol;
     }
 
-    public void SetElementNameText(string text = null)
+    public void EditElementNameText(string text = null)
     {
         if(text != null)
             ElementNameText.text = text;
@@ -82,7 +82,7 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
             ElementNameText.text = OwnStructChemicalElement.ElementName;
     }
 
-    public void SetAttemptText(string text = null)
+    public void EditAttemptText(string text = null)
     {
         if(text != null)
             ElementNameText.text = text;
@@ -110,7 +110,7 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
             }
         }
         
-        SetAttemptText();
+        EditAttemptText();
     }
 
     public void TriggerSelected()
