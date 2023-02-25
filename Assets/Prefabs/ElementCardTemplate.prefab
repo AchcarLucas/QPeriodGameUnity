@@ -747,7 +747,7 @@ GameObject:
   - component: {fileID: 4274307020512092478}
   m_Layer: 5
   m_Name: ElementCardTemplate
-  m_TagString: Untagged
+  m_TagString: ElementCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

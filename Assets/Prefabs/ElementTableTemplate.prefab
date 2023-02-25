@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 8766564710425330915}
   - component: {fileID: 1858124848810970083}
   - component: {fileID: 7870983612103973481}
+  - component: {fileID: 1400445532555757457}
   - component: {fileID: 3503423383655873071}
+  - component: {fileID: 8187223038367211754}
   m_Layer: 5
   m_Name: ElementTableTemplate
   m_TagString: Untagged
@@ -80,6 +82,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 10
+--- !u!95 &1400445532555757457
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102619878895545296}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 19d21ce368c25b607a28584fef0eea34, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &3503423383655873071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,6 +124,18 @@ MonoBehaviour:
   AtomicNumberText: {fileID: 1431984866570963636}
   ElementSymbolText: {fileID: 8428258171501377923}
   ElementNameText: {fileID: 2593883321700864232}
+--- !u!114 &8187223038367211754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102619878895545296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ed1ae9fb74c61b9813a71ec9c456b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2031192708086902515
 GameObject:
   m_ObjectHideFlags: 0

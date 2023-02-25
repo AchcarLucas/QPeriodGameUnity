@@ -23,7 +23,7 @@ public class TableElement : MonoBehaviour
     public void Start() 
     {
         ShaderEffect = this.GetComponent<Image>();
-        
+
         EditElementSymbolText();
         EditElementNameText();
         EditAtomicNumberText();
