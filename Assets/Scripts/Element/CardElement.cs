@@ -106,7 +106,8 @@ public class CardElement : MonoBehaviour, ISelectHandler
     {
         if(CurrentStatus == Settings.Status.NONE) {
             this.CurrentAttempt--;
-
+            TriggerMiss();
+            
             /*
                 Se o número de tentativas for alcançado,
                 a carta irá simplesmente informar que falhou
@@ -128,6 +129,11 @@ public class CardElement : MonoBehaviour, ISelectHandler
     public void TriggerUnselected()
     {
         this.CardAnimator.SetTrigger("Unselected");
+    }
+
+    public void TriggerMiss()
+    {
+        this.CardAnimator.SetTrigger("Miss");
     }
 
     public void ActiveFailed()
