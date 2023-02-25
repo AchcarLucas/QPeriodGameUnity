@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 
 using TMPro;
 
-public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
+public class CardElement : MonoBehaviour, ISelectHandler
 {
     const int MAX_ATTEMPT = 5;
 
@@ -46,15 +46,22 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void OnSelect(BaseEventData eventData)
     {
-        TriggerSelected();
-        GameManager.Instance.ObjectSelectedCardElement = gameObject;
-    }
+        GameObject PreviousSelected = GameManager.Instance.ObjectSelectedCardElement;
 
-    public void OnDeselect(BaseEventData data)
-    {
-        Debug.Log(data.selectedObject);
-        TriggerUnselected();
-        GameManager.Instance.ObjectSelectedCardElement = null;
+        /*
+            Unselected a carta anterior para ativar a atual
+        */
+        if(PreviousSelected != null) {
+            CardElement PreviousCardElement = PreviousSelected.GetComponent<CardElement>();
+            PreviousCardElement.TriggerUnselected();
+        }
+
+        /*
+            Ativa a carta que foi selecionada
+        */
+        this.TriggerSelected();
+        GameManager.Instance.ObjectSelectedCardElement = gameObject;
+        
     }
 
     /*

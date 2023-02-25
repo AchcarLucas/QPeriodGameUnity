@@ -50,6 +50,8 @@ public class TableSystem : MonoBehaviour
                     ElementTableOutlineTemplate,
                     ElementOutlineChildObject);
 
+            TableOutlineObject.name = "TableOutlineObject_" + StructChemicalElement.Line + StructChemicalElement.Column;
+
             // Element
             /*
             GameObject TableObject = GameObject.Instantiate(
