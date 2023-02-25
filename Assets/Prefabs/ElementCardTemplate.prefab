@@ -715,7 +715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45cab8d45ec41443a9d679628f9de4cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OwnElement:
+  OwnStructChemicalElement:
     Column: 0
     Line: 0
     AtomicNumber: 0
@@ -723,9 +723,9 @@ MonoBehaviour:
     ElementSymbol: 
     TMaterial: 0
   CurrentStatus: 0
+  Front: {fileID: 3904705307958794929}
   AttemptValueText: {fileID: 8915453793145275888}
   ElementSymbolText: {fileID: 4022469066469992674}
-  Front: {fileID: 3904705307958794929}
 --- !u!1 &4255614592108845804
 GameObject:
   m_ObjectHideFlags: 0

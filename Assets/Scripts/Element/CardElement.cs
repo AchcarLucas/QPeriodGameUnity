@@ -18,6 +18,9 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
     [Header("Status Element")]
     public Settings.Status CurrentStatus = Settings.Status.NONE;
 
+    [Header("Front Background")]
+    public Image Front;
+
     [Header("TMP_Texts Element")]
     public TMP_Text AttemptValueText;
     public TMP_Text ElementSymbolText;
@@ -35,6 +38,8 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
 
         SetAttemptText();
         SetElementSymbolText();
+
+        Front.color = Settings.GetMaterialColor(OwnStructChemicalElement.TMaterial);
     }
 
     public void OnSelect(BaseEventData eventData)

@@ -54,6 +54,9 @@ public class Settings
             case TypeMaterial.AlkalineEarthMetal:
                 return AlkalineEarthMetalColor;
 
+            case TypeMaterial.Actinidia:
+                return ActinidiaColor;
+
             case TypeMaterial.TransitionMetal:
                 return TransitionMetalColor;
                 
