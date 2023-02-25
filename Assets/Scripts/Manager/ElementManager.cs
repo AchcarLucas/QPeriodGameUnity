@@ -5,7 +5,7 @@ using UnityEngine;
 public class ElementManager : MonoBehaviour
 {
     public static ElementManager Instance;
-    public static List<Element> ChemicalElements;
+    public static List<Element> StructChemicalElements;
 
     private void Awake() {
         if(Instance != null) {
@@ -15,6 +15,6 @@ public class ElementManager : MonoBehaviour
         
         Instance = this;
 
-        ChemicalElements = Helper.Shuffle(Creator.CreateChemicalElements());
+        StructChemicalElements = Helper.Shuffle(Creator.CreateChemicalElements());
     }
 }

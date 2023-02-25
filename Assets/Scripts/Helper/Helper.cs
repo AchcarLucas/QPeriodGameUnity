@@ -12,7 +12,6 @@ public static class Helper
     public static List<T> Shuffle<T>(this List<T> list)  
     {  
         int n = list.Count;
-
         while (n > 1) {  
             n--;  
             int k = Random.Range(0, n + 1);
@@ -20,8 +19,6 @@ public static class Helper
             list[k] = list[n];  
             list[n] = value;  
         }
-
         return list;
     }
-
 }

@@ -12,8 +12,8 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
     const int MAX_ATTEMPT = 5;
 
     [SerializeField]
-    [Header("Struct Element")]
-    public Element OwnStructElement;
+    [Header("Struct Chemical Element")]
+    public Element OwnStructChemicalElement;
     
     [Header("Status Element")]
     public Settings.Status CurrentStatus = Settings.Status.NONE;
@@ -61,7 +61,7 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void SetElementSymbolText()
     {
-        ElementSymbolText.text = OwnStructElement.ElementSymbol;
+        ElementSymbolText.text = OwnStructChemicalElement.ElementSymbol;
     }
 
     public string GetElementSymbolText()

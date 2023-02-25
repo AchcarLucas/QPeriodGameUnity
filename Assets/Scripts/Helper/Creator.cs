@@ -35,6 +35,23 @@ public static class Creator
         elements.Add(new Element(18, 6, 86, "Radônio", "Rn", Settings.TypeMaterial.NobleGases));
         elements.Add(new Element(18, 7, 118, "Oganessônio", "Og", Settings.TypeMaterial.NobleGases));
 
+
+        elements.Add(new Element(4, 9, 2, "Actídio", "Ac", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(5, 9, 10, "Tório", "Th", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(6, 9, 18, "Protactídio", "Pa", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(7, 9, 36, "Urânio", "U", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(8, 9, 54, "Netúnio", "Np", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(9, 9, 86, "Plutônio", "Pu", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(10, 9, 118, "Amerício", "Am", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(11, 9, 118, "Cúrio", "Cm", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(12, 9, 118, "Berquélio", "Bk", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(13, 9, 118, "Califórnio", "Cf", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(14, 9, 118, "Einsténio", "Es", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(15, 9, 118, "Férmio", "Fm", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(16, 9, 118, "Mendelévio", "Md", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(17, 9, 118, "Nobélio", "No", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(18, 9, 118, "Laurêncio", "Lr", Settings.TypeMaterial.Actinidia));
+
         return elements;
     }
 }
