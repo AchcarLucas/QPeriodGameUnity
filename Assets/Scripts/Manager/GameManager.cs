@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GameObject ObjectSelectedCardElement;
 
-    private void Awake() {
+    private void Awake() 
+    {
         if(Instance != null) {
             Destroy(gameObject);
             return;

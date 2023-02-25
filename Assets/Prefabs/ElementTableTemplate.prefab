@@ -99,6 +99,9 @@ MonoBehaviour:
     ElementName: 
     ElementSymbol: 
     TMaterial: 0
+  AtomicNumberText: {fileID: 1431984866570963636}
+  ElementSymbolText: {fileID: 8428258171501377923}
+  ElementNameText: {fileID: 2593883321700864232}
 --- !u!1 &2031192708086902515
 GameObject:
   m_ObjectHideFlags: 0

@@ -65,7 +65,7 @@ public class TableSystem : MonoBehaviour
                 (RectTemplate.width + 10) * LocalScaleTemplate.x * (StructChemicalElement.Column - 1),
                 (-1) * (RectTemplate.height + 10) * LocalScaleTemplate.y * (StructChemicalElement.Line - 1));
 
-            TableObject.SetActive(false);
+            //TableObject.SetActive(false);
         }
 
         /*
