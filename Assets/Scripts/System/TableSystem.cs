@@ -44,17 +44,28 @@ public class TableSystem : MonoBehaviour
         */
 
         foreach(Element StructChemicalElement in StructChemicalElements) {
+
+            // Element Outline
             GameObject TableOutlineObject = GameObject.Instantiate(
                     ElementTableOutlineTemplate,
                     ElementOutlineChildObject);
 
+            // Element
+            GameObject TableObject = GameObject.Instantiate(
+                    ElementTableTemplate,
+                    ElementChildObject);
+
             TableOutlineObject.GetComponent<TableOutlineElement>().OwnStructChemicalElement = StructChemicalElement;
+            TableObject.GetComponent<TableElement>().OwnStructChemicalElement = StructChemicalElement;
 
             RectTransform RectTableOutlineObject = TableOutlineObject.GetComponent<RectTransform>();
+            RectTransform RectTableObject = TableObject.GetComponent<RectTransform>();
 
-            RectTableOutlineObject.anchoredPosition = new Vector2(
+            RectTableObject.anchoredPosition = RectTableOutlineObject.anchoredPosition = new Vector2(
                 (RectTemplate.width + 10) * LocalScaleTemplate.x * (StructChemicalElement.Column - 1),
                 (-1) * (RectTemplate.height + 10) * LocalScaleTemplate.y * (StructChemicalElement.Line - 1));
+
+            TableObject.SetActive(false);
         }
 
         /*

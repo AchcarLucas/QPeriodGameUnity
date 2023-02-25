@@ -92,6 +92,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5648c6782efa903c7a0965416a54ba13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OwnStructChemicalElement:
+    Column: 0
+    Line: 0
+    AtomicNumber: 0
+    ElementName: 
+    ElementSymbol: 
+    TMaterial: 0
 --- !u!1 &2031192708086902515
 GameObject:
   m_ObjectHideFlags: 0
