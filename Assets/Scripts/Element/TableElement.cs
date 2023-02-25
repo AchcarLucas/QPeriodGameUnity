@@ -18,12 +18,11 @@ public class TableElement : MonoBehaviour
     public TMP_Text ElementSymbolText;
     public TMP_Text ElementNameText;
 
-    private Image ShaderEffect;
+    [Header("Shaders Element")]
+    public Image ShaderEffect;
 
     public void Start() 
     {
-        ShaderEffect = this.GetComponent<Image>();
-
         EditElementSymbolText();
         EditElementNameText();
         EditAtomicNumberText();
