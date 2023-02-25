@@ -52,6 +52,7 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void OnDeselect(BaseEventData data)
     {
+        Debug.Log(data);
         TriggerUnselected();
         GameManager.Instance.ObjectSelectedCardElement = null;
     }

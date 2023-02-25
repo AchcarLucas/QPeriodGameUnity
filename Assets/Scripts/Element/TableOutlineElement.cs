@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 using TMPro;
 
-public class TableOutlineElement : MonoBehaviour
+public class TableOutlineElement : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField]
     [Header("Struct Chemical Element")]
@@ -13,25 +16,27 @@ public class TableOutlineElement : MonoBehaviour
     [Header("TMP_Texts Element")]
     public TMP_Text AtomicNumberText;
 
+    private Animator TableAnimation;
+
     void Start()
     {
+        TableAnimation = gameObject.GetComponent<Animator>();
+
         EditAtomicNumberText();
     }
 
     /*
         Mouse Event Hover
     */
-    
-    void OnMouseOver()
+
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        //If your mouse hovers over the GameObject with the script attached, output this message
-        Debug.Log("Mouse is over GameObject.");
+        Hover(true);
     }
 
-    void OnMouseExit()
+    public void OnPointerExit(PointerEventData eventData)
     {
-        //The mouse is no longer hovering over the GameObject so output this message each frame
-        Debug.Log("Mouse is no longer on GameObject.");
+         Hover(false);
     }
 
     void EditAtomicNumberText(string Text = null)
@@ -40,5 +45,10 @@ public class TableOutlineElement : MonoBehaviour
             AtomicNumberText.text = Text;
         else
             AtomicNumberText.text = OwnStructChemicalElement.AtomicNumber.ToString();
+    }
+
+    void Hover(bool status) 
+    {
+        TableAnimation.SetBool("Hover", status);
     }
 }

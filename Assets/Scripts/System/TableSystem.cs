@@ -64,8 +64,8 @@ public class TableSystem : MonoBehaviour
             /*RectTransform RectTableObject = TableObject.GetComponent<RectTransform>();*/
 
             RectTableOutlineObject.anchoredPosition = new Vector2(
-                (RectTemplate.width + 10) * LocalScaleTemplate.x * (StructChemicalElement.Column - 1),
-                (-1) * (RectTemplate.height + 10) * LocalScaleTemplate.y * (StructChemicalElement.Line - 1));
+                RectTableOutlineObject.anchoredPosition.x + (RectTemplate.width + 10) * LocalScaleTemplate.x * (StructChemicalElement.Column - 1),
+                RectTableOutlineObject.anchoredPosition.y + (-1) * (RectTemplate.height + 10) * LocalScaleTemplate.y * (StructChemicalElement.Line - 1));
 
             /*
             RectTableObject.anchoredPosition = RectTableOutlineObject.anchoredPosition
