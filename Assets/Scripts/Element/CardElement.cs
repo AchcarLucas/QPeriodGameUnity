@@ -24,6 +24,7 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
     [Header("TMP_Texts Element")]
     public TMP_Text AttemptValueText;
     public TMP_Text ElementSymbolText;
+    public TMP_Text ElementNameText;
 
     private int CurrentAttempt = MAX_ATTEMPT;
     private Animator CardAnimator;
@@ -38,6 +39,7 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
 
         SetAttemptText();
         SetElementSymbolText();
+        SetElementNameText();
 
         Front.color = Settings.GetMaterialColor(OwnStructChemicalElement.TMaterial);
     }
@@ -64,19 +66,33 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
         return (int)Mathf.Pow(2, CurrentAttempt);
     }
 
-    public void SetElementSymbolText()
+    public void SetElementSymbolText(string text = null)
     {
-        ElementSymbolText.text = OwnStructChemicalElement.ElementSymbol;
+        if(text != null)
+            ElementNameText.text = text;
+        else
+            ElementSymbolText.text = OwnStructChemicalElement.ElementSymbol;
+    }
+
+    public void SetElementNameText(string text = null)
+    {
+        if(text != null)
+            ElementNameText.text = text;
+        else
+            ElementNameText.text = OwnStructChemicalElement.ElementName;
+    }
+
+    public void SetAttemptText(string text = null)
+    {
+        if(text != null)
+            ElementNameText.text = text;
+        else
+            AttemptValueText.text = this.CurrentAttempt + "/" + MAX_ATTEMPT;
     }
 
     public string GetElementSymbolText()
     {
         return ElementSymbolText.text;
-    }
-
-    public void SetAttemptText()
-    {
-        AttemptValueText.text = this.CurrentAttempt + "/" + MAX_ATTEMPT;
     }
 
     public void HitAttempt()
