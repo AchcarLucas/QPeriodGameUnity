@@ -1212,8 +1212,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a31577433d5fdb1c381c8dbcb3c1397e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OutlineElementChild: {fileID: 699706008}
-  ElementChild: {fileID: 1006724984}
+  OutlineElementChildObject: {fileID: 699706008}
+  ElementChildObject: {fileID: 1006724984}
+  ElementTableOutlineTemplate: {fileID: 8677438641602731674, guid: c4a8849d7608a9909b37070fe137b385, type: 3}
+  ElementTableTemplate: {fileID: 1102619878895545296, guid: a6dd2753ad40c2142a9869f723e2115f, type: 3}
 --- !u!1001 &6646667402323273116
 PrefabInstance:
   m_ObjectHideFlags: 0

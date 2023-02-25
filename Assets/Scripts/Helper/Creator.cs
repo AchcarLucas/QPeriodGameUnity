@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+    Classe 'Creator' é responsável pela inicialização de estruturas essenciais 
+    que serão usados ao longo do jogo.
+    OBS: poderia ser feito direto pelo editor da unity, porém, achei melhor 
+    ter essa classe estática para fazer isso por mim.
+*/
+
 public static class Creator
 {
     public static List<Element> CreateChemicalElements()

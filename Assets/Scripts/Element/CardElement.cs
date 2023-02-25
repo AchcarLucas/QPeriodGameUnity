@@ -12,10 +12,13 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
     const int MAX_ATTEMPT = 5;
 
     [SerializeField]
-    public Element OwnElement;
+    [Header("Struct Element")]
+    public Element OwnStructElement;
     
+    [Header("Status Element")]
     public Settings.Status CurrentStatus = Settings.Status.NONE;
 
+    [Header("TMP_Texts Element")]
     public TMP_Text AttemptValueText;
     public TMP_Text ElementSymbolText;
 
@@ -58,7 +61,7 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void SetElementSymbolText()
     {
-        ElementSymbolText.text = OwnElement.ElementSymbol;
+        ElementSymbolText.text = OwnStructElement.ElementSymbol;
     }
 
     public string GetElementSymbolText()
@@ -76,6 +79,10 @@ public class CardElement : MonoBehaviour, ISelectHandler, IDeselectHandler
         if(CurrentStatus == Settings.Status.NONE) {
             this.CurrentAttempt--;
 
+            /*
+                Se o número de tentativas for alcançado,
+                a carta irá simplesmente informar que falhou
+            */
             if(this.CurrentAttempt <= 0) {
                 ActiveFailed();
                 this.CurrentAttempt = 0;

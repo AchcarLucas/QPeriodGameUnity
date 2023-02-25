@@ -15,6 +15,6 @@ public class ElementManager : MonoBehaviour
         
         Instance = this;
 
-        ChemicalElements = ListHelper.Shuffle(Creator.CreateChemicalElements());
+        ChemicalElements = Helper.Shuffle(Creator.CreateChemicalElements());
     }
 }

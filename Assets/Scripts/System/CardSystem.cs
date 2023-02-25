@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class CardSystem : MonoBehaviour
 {
+    [Header("Prefab Element Card")]
     public GameObject ElementCardTemplate;
     private ElementManager EManager = ElementManager.Instance;
 
     public void Awake()
     {
-        List<Element> elements = ElementManager.ChemicalElements;
+        List<Element> struct_elements = ElementManager.ChemicalElements;
 
-        Debug.Log("Instantiate " + elements.Count + " element(s) card");
+        Debug.Log("Instantiate " + struct_elements.Count + " element(s) card");
 
-        foreach(Element element in elements) {
-            // cria a instancia da carta
+        foreach(Element struct_element in struct_elements) {
+            // Cria a instancia do objeto da carta no SlideView
             GameObject card = GameObject.Instantiate(ElementCardTemplate, this.transform);
-            // adiciona o elemento dentro da carta
-            card.GetComponent<CardElement>().OwnElement = element;
+            // Adiciona a estrutura elemento dentro da carta
+            card.GetComponent<CardElement>().OwnStructElement = struct_element;
         }
     }
 }

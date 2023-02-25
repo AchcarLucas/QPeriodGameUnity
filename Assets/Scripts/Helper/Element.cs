@@ -1,6 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 
+/*
+    Classe 'Element' é responsável por manter a estrutura do elemento, contendo informações
+    como posição dentro da tabela (Grupo e Período), nome, simbolo entre outras
+    informações importantes
+*/
+
 [System.Serializable]
 public class Element
 {

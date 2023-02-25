@@ -2,7 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class ListHelper
+/*
+    Classe 'Helper' é responsável por manter funcionalidades uteis que auxiliam
+    nas funções principais do C# como exemplo, shuffle de list.
+*/
+
+public static class Helper
 {
     public static List<T> Shuffle<T>(this List<T> list)  
     {  
