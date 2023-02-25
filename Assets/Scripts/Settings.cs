@@ -36,7 +36,7 @@ public class Settings
     static public Color OthersMetalColor = new Color32(162, 199, 211, 255);
     static public Color SemiMetalColor = new Color32(77, 182, 172, 255);
     static public Color HalogensColor = new Color32(112, 203, 235, 255);
-    static public Color DefaultColor = new Color32(255, 255, 255, 255 * 0.8f);
+    static public Color DefaultColor = new Color32(255, 255, 255, 255);
 
     static public Color GetMaterialColor(TypeMaterial typeMaterial)
     {
@@ -68,7 +68,7 @@ public class Settings
                 
             case TypeMaterial.Halogens:
                 return HalogensColor;
-                
+
             default:
                 return DefaultColor;
         }
