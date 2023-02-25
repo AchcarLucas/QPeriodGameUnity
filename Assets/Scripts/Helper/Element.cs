@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 /*
     Classe 'Element' é responsável por manter a estrutura do elemento, contendo informações
-    como posição dentro da tabela (Grupo e Período), nome, simbolo entre outras
+    como posição dentro da tabela, nome, simbolo entre outras
     informações importantes
 */
 
@@ -22,7 +22,7 @@ public class Element
     public Element(
                         int Column, 
                         int Line, 
-                        int AtomicNumber, 
+                        int AtomicNumber,
                         string ElementName, 
                         string ElementSymbol, 
                         Settings.TypeMaterial TMaterial

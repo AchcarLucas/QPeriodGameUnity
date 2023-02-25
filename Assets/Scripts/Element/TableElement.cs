@@ -4,4 +4,7 @@ using UnityEngine;
 
 public class TableElement : MonoBehaviour
 {
+    [SerializeField]
+    [Header("Struct Chemical Element")]
+    public Element OwnStructChemicalElement;
 }

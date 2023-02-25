@@ -35,22 +35,37 @@ public static class Creator
         elements.Add(new Element(18, 6, 86, "Radônio", "Rn", Settings.TypeMaterial.NobleGases));
         elements.Add(new Element(18, 7, 118, "Oganessônio", "Og", Settings.TypeMaterial.NobleGases));
 
+        elements.Add(new Element(4, 9, 89, "Actídio", "Ac", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(5, 9, 90, "Tório", "Th", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(6, 9, 91, "Protactídio", "Pa", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(7, 9, 92, "Urânio", "U", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(8, 9, 93, "Netúnio", "Np", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(9, 9, 94, "Plutônio", "Pu", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(10, 9, 95, "Amerício", "Am", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(11, 9, 96, "Cúrio", "Cm", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(12, 9, 97, "Berquélio", "Bk", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(13, 9, 98, "Califórnio", "Cf", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(14, 9, 99, "Einsténio", "Es", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(15, 9, 100, "Férmio", "Fm", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(16, 9, 101, "Mendelévio", "Md", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(17, 9, 102, "Nobélio", "No", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(18, 9, 103, "Laurêncio", "Lr", Settings.TypeMaterial.Actinidia));
 
-        elements.Add(new Element(4, 9, 2, "Actídio", "Ac", Settings.TypeMaterial.Actinidia));
-        elements.Add(new Element(5, 9, 10, "Tório", "Th", Settings.TypeMaterial.Actinidia));
-        elements.Add(new Element(6, 9, 18, "Protactídio", "Pa", Settings.TypeMaterial.Actinidia));
-        elements.Add(new Element(7, 9, 36, "Urânio", "U", Settings.TypeMaterial.Actinidia));
-        elements.Add(new Element(8, 9, 54, "Netúnio", "Np", Settings.TypeMaterial.Actinidia));
-        elements.Add(new Element(9, 9, 86, "Plutônio", "Pu", Settings.TypeMaterial.Actinidia));
-        elements.Add(new Element(10, 9, 118, "Amerício", "Am", Settings.TypeMaterial.Actinidia));
-        elements.Add(new Element(11, 9, 118, "Cúrio", "Cm", Settings.TypeMaterial.Actinidia));
-        elements.Add(new Element(12, 9, 118, "Berquélio", "Bk", Settings.TypeMaterial.Actinidia));
-        elements.Add(new Element(13, 9, 118, "Califórnio", "Cf", Settings.TypeMaterial.Actinidia));
-        elements.Add(new Element(14, 9, 118, "Einsténio", "Es", Settings.TypeMaterial.Actinidia));
-        elements.Add(new Element(15, 9, 118, "Férmio", "Fm", Settings.TypeMaterial.Actinidia));
-        elements.Add(new Element(16, 9, 118, "Mendelévio", "Md", Settings.TypeMaterial.Actinidia));
-        elements.Add(new Element(17, 9, 118, "Nobélio", "No", Settings.TypeMaterial.Actinidia));
-        elements.Add(new Element(18, 9, 118, "Laurêncio", "Lr", Settings.TypeMaterial.Actinidia));
+        elements.Add(new Element(4, 8, 57, "Lantânio", "La", Settings.TypeMaterial.Lanthanides));
+        elements.Add(new Element(5, 8, 58, "Cério", "Ce", Settings.TypeMaterial.Lanthanides));
+        elements.Add(new Element(6, 8, 59, "Praseodímio", "Pr", Settings.TypeMaterial.Lanthanides));
+        elements.Add(new Element(7, 8, 60, "Neodímio", "Nd", Settings.TypeMaterial.Lanthanides));
+        elements.Add(new Element(8, 8, 61, "Promécio", "Pm", Settings.TypeMaterial.Lanthanides));
+        elements.Add(new Element(9, 8, 62, "Samário", "Sm", Settings.TypeMaterial.Lanthanides));
+        elements.Add(new Element(10, 8, 63, "Európio", "Eu", Settings.TypeMaterial.Lanthanides));
+        elements.Add(new Element(11, 8, 64, "Gadolínio", "Gd", Settings.TypeMaterial.Lanthanides));
+        elements.Add(new Element(12, 8, 65, "Térbio", "Tb", Settings.TypeMaterial.Lanthanides));
+        elements.Add(new Element(13, 8, 66, "Disprósio", "Dy", Settings.TypeMaterial.Lanthanides));
+        elements.Add(new Element(14, 8, 67, "Hólmio", "Ho", Settings.TypeMaterial.Lanthanides));
+        elements.Add(new Element(15, 8, 68, "Érbio", "Er", Settings.TypeMaterial.Lanthanides));
+        elements.Add(new Element(16, 8, 69, "Túlio", "Tm", Settings.TypeMaterial.Lanthanides));
+        elements.Add(new Element(17, 8, 70, "Itérbio", "Yb", Settings.TypeMaterial.Lanthanides));
+        elements.Add(new Element(18, 8, 71, "Lutécio", "Lu", Settings.TypeMaterial.Lanthanides));
 
         return elements;
     }
