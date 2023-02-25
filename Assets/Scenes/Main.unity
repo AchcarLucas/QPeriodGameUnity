@@ -612,7 +612,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 12.5, y: 30}
-  m_SizeDelta: {x: -85, y: -60}
+  m_SizeDelta: {x: -85, y: -80}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &783188285
 GameObject:
@@ -784,7 +784,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 12.5, y: 30}
-  m_SizeDelta: {x: -85, y: -60}
+  m_SizeDelta: {x: -85, y: -80}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &1534500177 stripped
 GameObject:
@@ -1055,7 +1055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4989725230961977517, guid: fc59ecfaa3f0d108db727bcce9c28452, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 804
+      value: 820.54
       objectReference: {fileID: 0}
     - target: {fileID: 4989725230961977517, guid: fc59ecfaa3f0d108db727bcce9c28452, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1091,7 +1091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4989725230961977517, guid: fc59ecfaa3f0d108db727bcce9c28452, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 652
+      value: 654.7294
       objectReference: {fileID: 0}
     - target: {fileID: 4989725230961977517, guid: fc59ecfaa3f0d108db727bcce9c28452, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
