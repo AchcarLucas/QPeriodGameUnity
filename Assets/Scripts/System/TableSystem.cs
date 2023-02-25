@@ -13,6 +13,9 @@ public class TableSystem : MonoBehaviour
     public Transform ElementChildObject;
     public Transform ElementOutlineChildObject;
 
+    public Transform GroupDigitTextChildObject;
+    public Transform FamilyDigitTextChildObject;
+
     [Header("Prefab Elements Table")]
     public GameObject ElementTableTemplate;
     public GameObject ElementTableOutlineTemplate;
@@ -60,7 +63,7 @@ public class TableSystem : MonoBehaviour
             Desenha a numeração do grupo
         */
         for(int GroupIndex = 0; GroupIndex < MAX_GROUP; ++GroupIndex) {
-            GameObject DigitObject = GameObject.Instantiate(DigitTextTemplate, ElementOutlineChildObject);
+            GameObject DigitObject = GameObject.Instantiate(DigitTextTemplate, GroupDigitTextChildObject);
 
             TMP_Text DigitText = DigitObject.GetComponent<TMP_Text>();
             RectTransform RectText = DigitObject.GetComponent<RectTransform>();
@@ -80,7 +83,7 @@ public class TableSystem : MonoBehaviour
             Desenha a numeração da familia
         */
         for(int FamilyIndex = 0; FamilyIndex < MAX_FAMILY; ++FamilyIndex) {
-            GameObject DigitObject = GameObject.Instantiate(DigitTextTemplate, ElementOutlineChildObject);
+            GameObject DigitObject = GameObject.Instantiate(DigitTextTemplate, FamilyDigitTextChildObject);
 
             TMP_Text DigitText = DigitObject.GetComponent<TMP_Text>();
             RectTransform RectText = DigitObject.GetComponent<RectTransform>();
