@@ -24,10 +24,10 @@ public class TableOutlineElement : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left)
-            OnVerifyElement();
+            OnVerifyAttemptElement();
     }
 
-    public void OnVerifyElement()
+    public void OnVerifyAttemptElement()
     {
         ref GameObject SelectedElement = ref ElementManager.Instance.ObjectSelectedCardElement;
 
@@ -44,7 +44,20 @@ public class TableOutlineElement : MonoBehaviour, IPointerClickHandler
             this.OwnStructChemicalElement.AtomicNumber) {
                 ElementManager.Instance.CreateTableElement(SelectedCardElement);
                 SelectedCardElement.ActiveSuccess();
+                return;
             }
+
+        // Caso não seja do elemento, chama a função HitMiss e retira uma chance
+        SelectedCardElement.HitMiss();
+
+        /*
+            Caso já tenha ocorrido um failed, tiramos ele de objeto selecionado
+            e criamos o elemento de tabela do elemento selecionado
+        */
+        if(SelectedCardElement.HasFailed()) {
+            ElementManager.Instance.CreateTableElement(SelectedCardElement);
+            SelectedElement = null;
+        }
     }
 
     void EditAtomicNumberText(string Text = null)

@@ -102,12 +102,21 @@ public class CardElement : MonoBehaviour, ISelectHandler
         return ElementSymbolText.text;
     }
 
-    public void HasFailed()
+    public bool HasFailed()
     {
-        if(Settings.Status.FAILED)
-            return true;
-            
-        return false;
+        return this.CurrentAttempt <= 0;
+    }
+
+    public void VerifyFailure()
+    {
+        /*
+            Se o número de tentativas for alcançado,
+            a carta irá simplesmente informar que falhou
+        */
+        if(HasFailed()) {
+            ActiveFailed();
+            this.CurrentAttempt = 0;
+        }
     }
 
     public void HitMiss()
@@ -115,15 +124,7 @@ public class CardElement : MonoBehaviour, ISelectHandler
         if(CurrentStatus == Settings.Status.NONE) {
             this.CurrentAttempt--;
             TriggerMiss();
-            
-            /*
-                Se o número de tentativas for alcançado,
-                a carta irá simplesmente informar que falhou
-            */
-            if(this.CurrentAttempt <= 0) {
-                ActiveFailed();
-                this.CurrentAttempt = 0;
-            }
+            VerifyFailure();
         }
         
         EditAttemptText();
