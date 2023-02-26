@@ -25,10 +25,10 @@ public class TableSystem : MonoBehaviour
     public void Awake()
     {
         StructChemicalElements = ElementManager.StructChemicalElements;
-        DrawPeriodTable();
+        DrawPeriodicTable();
     }
 
-    public void DrawPeriodTable()
+    public void DrawPeriodicTable()
     {
         /*
             A escala do ElementTableTemplate e do ElementTableOutlineTemplate
@@ -49,7 +49,7 @@ public class TableSystem : MonoBehaviour
                     ElementTableOutlineTemplate,
                     ElementOutlineChildObject);
 
-            TableOutlineObject.name = "TableOutlineObject_" + StructChemicalElement.Line + StructChemicalElement.Column;
+            TableOutlineObject.name = Settings.BaseNameTableElementOutline + StructChemicalElement.Column + StructChemicalElement.Line;
 
             TableOutlineObject.GetComponent<TableOutlineElement>().OwnStructChemicalElement = StructChemicalElement;
 

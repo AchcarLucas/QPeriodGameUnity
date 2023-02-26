@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Settings
 {
+    static public string BaseNameTableElementOutline = "TableElementOutlineObject_";
+    static public string BaseNameTableElement = "TableElementObject_";
+    static public string BaseNameCardElement = "CardElementObject_";
+
     public enum Status
     {
         NONE,

@@ -46,7 +46,7 @@ public class CardElement : MonoBehaviour, ISelectHandler
 
     public void OnSelect(BaseEventData eventData)
     {
-        ref GameObject PreviousSelected = ref GameManager.Instance.ObjectSelectedCardElement;
+        ref GameObject PreviousSelected = ref ElementManager.Instance.ObjectSelectedCardElement;
 
         /*
             Unselected a carta anterior para ativar a atual
@@ -57,7 +57,7 @@ public class CardElement : MonoBehaviour, ISelectHandler
         }
 
         /*
-            Ativa a carta que foi selecionada
+            Ativa a carta que foi selecionada e mantém salvo o elemento selecionado
         */
         this.TriggerSelected();
         PreviousSelected = gameObject;
@@ -102,7 +102,15 @@ public class CardElement : MonoBehaviour, ISelectHandler
         return ElementSymbolText.text;
     }
 
-    public void HitAttempt()
+    public void HasFailed()
+    {
+        if(Settings.Status.FAILED)
+            return true;
+            
+        return false;
+    }
+
+    public void HitMiss()
     {
         if(CurrentStatus == Settings.Status.NONE) {
             this.CurrentAttempt--;

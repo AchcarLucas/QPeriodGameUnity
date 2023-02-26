@@ -10,9 +10,6 @@ using TMPro;
 public class TableOutlineElement : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField]
-    [Header("Prefab Elements Table")]
-    public GameObject ElementTableTemplate;
-
     [Header("Struct Chemical Element")]
     public Element OwnStructChemicalElement;
 
@@ -27,33 +24,27 @@ public class TableOutlineElement : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left)
-        {
-            ref GameObject SelectedElement = ref GameManager.Instance.ObjectSelectedCardElement;
+            OnVerifyElement();
+    }
 
-            if(SelectedElement == null)
-                return;
+    public void OnVerifyElement()
+    {
+        ref GameObject SelectedElement = ref ElementManager.Instance.ObjectSelectedCardElement;
 
-            CardElement SelectedCardElement = SelectedElement.GetComponent<CardElement>();
+        if(SelectedElement == null)
+            return;
 
-            /*
-                Verifica se o TableOutlineElement é o mesmo do CardElement
-                se for, cria o TableElement e destroi esse objeto
-            */
-            if( SelectedCardElement.OwnStructChemicalElement.AtomicNumber ==
-                this.OwnStructChemicalElement.AtomicNumber) {
-                    GameObject TableObject = GameObject.Instantiate(
-                    ElementTableTemplate,
-                    gameObject.transform.parent);
+        CardElement SelectedCardElement = SelectedElement.GetComponent<CardElement>();
 
-                    TableObject.GetComponent<TableElement>().OwnStructChemicalElement = OwnStructChemicalElement;
-
-                    RectTransform RectTableObject = TableObject.GetComponent<RectTransform>();
-                    RectTableObject.anchoredPosition = this.GetComponent<RectTransform>().anchoredPosition;
-
-                    Destroy(this.gameObject);
-                }
-            
-        }
+        /*
+            Verifica se o TableOutlineElement é o mesmo do CardElement,
+            se for, chama a função para criar o elemento de tabela
+        */
+        if( SelectedCardElement.OwnStructChemicalElement.AtomicNumber ==
+            this.OwnStructChemicalElement.AtomicNumber) {
+                ElementManager.Instance.CreateTableElement(SelectedCardElement);
+                SelectedCardElement.ActiveSuccess();
+            }
     }
 
     void EditAtomicNumberText(string Text = null)
