@@ -9,8 +9,6 @@ using TMPro;
 
 public class CardElement : MonoBehaviour, ISelectHandler
 {
-    const int MAX_ATTEMPT = 5;
-
     [SerializeField]
     [Header("Struct Chemical Element")]
     public Element OwnStructChemicalElement;
@@ -26,7 +24,7 @@ public class CardElement : MonoBehaviour, ISelectHandler
     public TMP_Text ElementSymbolText;
     public TMP_Text ElementNameText;
 
-    private int CurrentAttempt = MAX_ATTEMPT;
+    private int CurrentAttempt = 0;
     private Animator CardAnimator;
 
     /*
@@ -35,6 +33,7 @@ public class CardElement : MonoBehaviour, ISelectHandler
 
     void Start()
     {
+        CurrentAttempt = ElementManager.Instance.MAX_ATTEMPT_TO_FAILED;
         CardAnimator = gameObject.GetComponent<Animator>();
 
         EditAttemptText();
@@ -94,7 +93,7 @@ public class CardElement : MonoBehaviour, ISelectHandler
         if(text != null)
             ElementNameText.text = text;
         else
-            AttemptValueText.text = this.CurrentAttempt + "/" + MAX_ATTEMPT;
+            AttemptValueText.text = this.CurrentAttempt + "/" + ElementManager.Instance.MAX_ATTEMPT_TO_FAILED;
     }
 
     public string GetElementSymbolText()

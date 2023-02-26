@@ -12,6 +12,9 @@ public class ElementManager : MonoBehaviour
     [Header("Prefab Element Table")]
     public GameObject ElementTableTemplate;
 
+    [Header("Max attempt to failed")]
+    public int MAX_ATTEMPT_TO_FAILED = 5;
+
     // Mantém uma referência para a carta de elemento que está selecionada atualmente
     [HideInInspector]
     public GameObject ObjectSelectedCardElement;

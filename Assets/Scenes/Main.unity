@@ -681,6 +681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ElementTableTemplate: {fileID: 1102619878895545296, guid: a6dd2753ad40c2142a9869f723e2115f, type: 3}
+  MAX_ATTEMPT_TO_FAILED: 5
   ObjectSelectedCardElement: {fileID: 0}
 --- !u!4 &783188287
 Transform:
