@@ -9,8 +9,6 @@ using TMPro;
 
 public class CardElement : CommonElement, ISelectHandler
 {
-    [SerializeField]
-
     public TMP_Text AttemptValueText;
 
     [Header("Status Element")]

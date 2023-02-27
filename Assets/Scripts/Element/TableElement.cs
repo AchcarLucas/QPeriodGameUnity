@@ -9,8 +9,6 @@ using TMPro;
 
 public class TableElement : CommonElement
 {
-    [SerializeField]
-    
     public TMP_Text AtomicNumberText;
 
     [Header("Shaders Element")]

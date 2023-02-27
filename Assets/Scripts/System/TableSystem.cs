@@ -8,7 +8,6 @@ public class TableSystem : MonoBehaviour
     const int MAX_GROUP = 18;
     const int MAX_FAMILY = 7;
 
-    [SerializeField]
     [Header("Child Elements Transform")]
     public Transform ElementChildObject;
     public Transform ElementOutlineChildObject;

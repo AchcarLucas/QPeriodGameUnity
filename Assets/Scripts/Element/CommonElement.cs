@@ -10,7 +10,6 @@ using TMPro;
 public class CommonElement : MonoBehaviour
 {
     [SerializeField]
-    
     [Header("Struct Chemical Element")]
     public Element OwnStructChemicalElement;
 
