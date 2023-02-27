@@ -17,13 +17,13 @@ public class CardElement : CommonElement, ISelectHandler
     [Header("Front Background")]
     public Image Front;
 
-    private int CurrentAttempt = 0;
-    private Animator CardAnimator;
+    private int _CurrentAttempt = 0;
+    private Animator _CardAnimator;
 
     void Start()
     {
-        CurrentAttempt = ElementManager.Instance.MAX_ATTEMPT_TO_FAILED;
-        CardAnimator = gameObject.GetComponent<Animator>();
+        _CurrentAttempt = ElementManager.Instance.MAX_ATTEMPT_TO_FAILED;
+        _CardAnimator = gameObject.GetComponent<Animator>();
 
         EditElementSymbolText();
         EditElementNameText();
@@ -37,7 +37,7 @@ public class CardElement : CommonElement, ISelectHandler
         if(text != null)
             ElementNameText.text = text;
         else
-            AttemptValueText.text = this.CurrentAttempt + "/" + ElementManager.Instance.MAX_ATTEMPT_TO_FAILED;
+            AttemptValueText.text = _CurrentAttempt + "/" + ElementManager.Instance.MAX_ATTEMPT_TO_FAILED;
     }
 
     public void OnSelect(BaseEventData eventData)
@@ -55,13 +55,13 @@ public class CardElement : CommonElement, ISelectHandler
         /*
             Ativa a carta que foi selecionada e mantém salvo o elemento selecionado
         */
-        this.TriggerSelected();
+        TriggerSelected();
         PreviousSelected = gameObject;
     }
 
     public bool HasFailed()
     {
-        return this.CurrentAttempt <= 0;
+        return _CurrentAttempt <= 0;
     }
 
     public void VerifyFailure()
@@ -72,14 +72,14 @@ public class CardElement : CommonElement, ISelectHandler
         */
         if(HasFailed()) {
             ActiveFailed();
-            this.CurrentAttempt = 0;
+            _CurrentAttempt = 0;
         }
     }
 
     public void HitMiss()
     {
         if(CurrentStatus == Settings.Status.NONE) {
-            this.CurrentAttempt--;
+            _CurrentAttempt--;
             TriggerMiss();
             VerifyFailure();
         }
@@ -90,33 +90,33 @@ public class CardElement : CommonElement, ISelectHandler
     public int CalculateScore()
     {
         // O score é calculado em potência de 2
-        return (int)Mathf.Pow(2, CurrentAttempt);
+        return (int)Mathf.Pow(2, _CurrentAttempt);
     }
 
     public void TriggerSelected()
     {
-        this.CardAnimator.SetTrigger("Selected");
+        _CardAnimator.SetTrigger("Selected");
     }
 
     public void TriggerUnselected()
     {
-        this.CardAnimator.SetTrigger("Unselected");
+        _CardAnimator.SetTrigger("Unselected");
     }
 
     public void TriggerMiss()
     {
-        this.CardAnimator.SetTrigger("Miss");
+        _CardAnimator.SetTrigger("Miss");
     }
 
     public void ActiveFailed()
     {
-        this.CardAnimator.SetBool("Failed", true);
+        _CardAnimator.SetBool("Failed", true);
         CurrentStatus = Settings.Status.FAILED;
     }
 
     public void ActiveSuccess()
     {
-        this.CardAnimator.SetBool("Success", true);
+        _CardAnimator.SetBool("Success", true);
         CurrentStatus = Settings.Status.SUCCESS;
     }
 }

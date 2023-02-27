@@ -7,7 +7,7 @@ public class CardSystem : MonoBehaviour
     [Header("Prefab Element Card")]
     public GameObject ElementCardTemplate;
 
-    private ElementManager EManager = ElementManager.Instance;
+    private ElementManager _EManager = ElementManager.Instance;
 
     public void Awake()
     {
