@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class CardSystem : MonoBehaviour
 {
-    [Header("Prefab Element Card")]
+    [Header("Prefab Elements Card")]
     public GameObject ElementCardTemplate;
 
     private ElementManager _EManager = ElementManager.Instance;
 
     public void Awake()
     {
-        CreateCardElement();
+        CreateCardElements();
     }
 
-    public void CreateCardElement()
+    public void CreateCardElements()
     {
         List<Element> StructChemicalElements = ElementManager.StructChemicalElements;
 

@@ -27,10 +27,8 @@ public class ElementManager : MonoBehaviour
         }
         
         Instance = this;
-
-        // VOLTAR ESSA LINHA QUANDO FINALIZAR ...
+        
         StructChemicalElements = Helper.Shuffle(Creator.CreateChemicalElements());
-        //StructChemicalElements = Creator.CreateChemicalElements();
     }
 
     /*

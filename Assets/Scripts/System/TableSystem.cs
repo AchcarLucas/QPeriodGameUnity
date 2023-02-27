@@ -19,17 +19,15 @@ public class TableSystem : MonoBehaviour
 
     private ElementManager _manager = ElementManager.Instance;
 
-    private List<Element> _StructChemicalElements;
-
     public void Awake()
     {
-        _StructChemicalElements = ElementManager.StructChemicalElements;
-        
         CreatePeriodicTable();
     }
 
     public void CreatePeriodicTable()
     {
+        List<Element> StructChemicalElements = ElementManager.StructChemicalElements;
+
         /*
             A escala do ElementTableTemplate e do ElementTableOutlineTemplate
             portanto pode ser utilizado o mesmo rect e o mesmo localScale
@@ -42,7 +40,7 @@ public class TableSystem : MonoBehaviour
             Montamos os elementos da tabela periódico
         */
 
-        foreach(Element StructChemicalElement in _StructChemicalElements) {
+        foreach(Element StructChemicalElement in StructChemicalElements) {
 
             // Element Outline
             GameObject TableOutlineObject = GameObject.Instantiate(
@@ -99,6 +97,6 @@ public class TableSystem : MonoBehaviour
                 );
         }
 
-        Debug.Log("Instantiate " + _StructChemicalElements.Count + " element(s) table and outline");
+        Debug.Log("Instantiate " + StructChemicalElements.Count + " element(s) table and outline");
     }
 }
