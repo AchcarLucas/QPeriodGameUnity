@@ -22,10 +22,6 @@ public class CardElement : CommonElement, ISelectHandler
     private int CurrentAttempt = 0;
     private Animator CardAnimator;
 
-    /*
-        Internal Events
-    */
-
     void Start()
     {
         CurrentAttempt = ElementManager.Instance.MAX_ATTEMPT_TO_FAILED;
@@ -36,6 +32,14 @@ public class CardElement : CommonElement, ISelectHandler
         EditAttemptText();
 
         Front.color = Settings.GetMaterialColor(OwnStructChemicalElement.TMaterial);
+    }
+
+    public void EditAttemptText(string text = null)
+    {
+        if(text != null)
+            ElementNameText.text = text;
+        else
+            AttemptValueText.text = this.CurrentAttempt + "/" + ElementManager.Instance.MAX_ATTEMPT_TO_FAILED;
     }
 
     public void OnSelect(BaseEventData eventData)
@@ -55,29 +59,6 @@ public class CardElement : CommonElement, ISelectHandler
         */
         this.TriggerSelected();
         PreviousSelected = gameObject;
-    }
-
-    /*
-       Generic Functions
-    */
-
-    public int CalculateScore()
-    {
-        // O score é calculado em potência de 2
-        return (int)Mathf.Pow(2, CurrentAttempt);
-    }
-
-    public void EditAttemptText(string text = null)
-    {
-        if(text != null)
-            ElementNameText.text = text;
-        else
-            AttemptValueText.text = this.CurrentAttempt + "/" + ElementManager.Instance.MAX_ATTEMPT_TO_FAILED;
-    }
-
-    public string GetElementSymbolText()
-    {
-        return ElementSymbolText.text;
     }
 
     public bool HasFailed()
@@ -106,6 +87,12 @@ public class CardElement : CommonElement, ISelectHandler
         }
         
         EditAttemptText();
+    }
+
+    public int CalculateScore()
+    {
+        // O score é calculado em potência de 2
+        return (int)Mathf.Pow(2, CurrentAttempt);
     }
 
     public void TriggerSelected()

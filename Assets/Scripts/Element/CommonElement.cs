@@ -33,4 +33,14 @@ public class CommonElement : MonoBehaviour
         else
             ElementNameText.text = OwnStructChemicalElement.ElementName;
     }
+
+    public string GetElementSymbolText()
+    {
+        return ElementSymbolText.text;
+    }
+
+    public string GetElementNameText()
+    {
+        return ElementNameText.text;
+    }
 }
