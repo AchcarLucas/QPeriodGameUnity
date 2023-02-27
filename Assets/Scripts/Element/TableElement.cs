@@ -7,16 +7,11 @@ using UnityEngine.EventSystems;
 
 using TMPro;
 
-public class TableElement : MonoBehaviour
+public class TableElement : CommonElement
 {
     [SerializeField]
-    [Header("Struct Chemical Element")]
-    public Element OwnStructChemicalElement;
-
-    [Header("TMP_Texts Element")]
+    
     public TMP_Text AtomicNumberText;
-    public TMP_Text ElementSymbolText;
-    public TMP_Text ElementNameText;
 
     [Header("Shaders Element")]
     public Image ShaderEffect;
@@ -28,22 +23,6 @@ public class TableElement : MonoBehaviour
         EditAtomicNumberText();
 
         ShaderEffect.color = Settings.GetMaterialColor(OwnStructChemicalElement.TMaterial);
-    }
-
-    public void EditElementSymbolText(string text = null)
-    {
-        if(text != null)
-            ElementNameText.text = text;
-        else
-            ElementSymbolText.text = OwnStructChemicalElement.ElementSymbol;
-    }
-
-    public void EditElementNameText(string text = null)
-    {
-        if(text != null)
-            ElementNameText.text = text;
-        else
-            ElementNameText.text = OwnStructChemicalElement.ElementName;
     }
 
     public void EditAtomicNumberText(string text = null)

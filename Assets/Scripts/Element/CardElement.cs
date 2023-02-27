@@ -7,22 +7,17 @@ using UnityEngine.EventSystems;
 
 using TMPro;
 
-public class CardElement : MonoBehaviour, ISelectHandler
+public class CardElement : CommonElement, ISelectHandler
 {
     [SerializeField]
-    [Header("Struct Chemical Element")]
-    public Element OwnStructChemicalElement;
-    
+
+    public TMP_Text AttemptValueText;
+
     [Header("Status Element")]
     public Settings.Status CurrentStatus = Settings.Status.NONE;
 
     [Header("Front Background")]
     public Image Front;
-
-    [Header("TMP_Texts Element")]
-    public TMP_Text AttemptValueText;
-    public TMP_Text ElementSymbolText;
-    public TMP_Text ElementNameText;
 
     private int CurrentAttempt = 0;
     private Animator CardAnimator;
@@ -36,9 +31,9 @@ public class CardElement : MonoBehaviour, ISelectHandler
         CurrentAttempt = ElementManager.Instance.MAX_ATTEMPT_TO_FAILED;
         CardAnimator = gameObject.GetComponent<Animator>();
 
-        EditAttemptText();
         EditElementSymbolText();
         EditElementNameText();
+        EditAttemptText();
 
         Front.color = Settings.GetMaterialColor(OwnStructChemicalElement.TMaterial);
     }
@@ -70,22 +65,6 @@ public class CardElement : MonoBehaviour, ISelectHandler
     {
         // O score é calculado em potência de 2
         return (int)Mathf.Pow(2, CurrentAttempt);
-    }
-
-    public void EditElementSymbolText(string text = null)
-    {
-        if(text != null)
-            ElementNameText.text = text;
-        else
-            ElementSymbolText.text = OwnStructChemicalElement.ElementSymbol;
-    }
-
-    public void EditElementNameText(string text = null)
-    {
-        if(text != null)
-            ElementNameText.text = text;
-        else
-            ElementNameText.text = OwnStructChemicalElement.ElementName;
     }
 
     public void EditAttemptText(string text = null)
