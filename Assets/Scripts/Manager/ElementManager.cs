@@ -19,7 +19,7 @@ public class ElementManager : MonoBehaviour
     [HideInInspector]
     public GameObject ObjectSelectedCardElement;
 
-    private void Awake() 
+    private void Awake()
     {
         if(Instance != null) {
             Destroy(gameObject);
