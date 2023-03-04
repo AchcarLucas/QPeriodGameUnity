@@ -10,7 +10,8 @@ public class SoundManager : MonoBehaviour
     {
         Miss,
         Failed,
-        Success
+        Success,
+        Selected
     }
 
     /*
@@ -31,24 +32,26 @@ public class SoundManager : MonoBehaviour
 
     public SoundAudioClip[] SoundAudioClipArray;
 
-    private void Awake() 
+    [HideInInspector]
+    public AudioSource _AudioSource;
+
+    private void Awake()
     {
         if(Instance != null) {
             Destroy(gameObject);
             return;
         }
         
-        DontDestroyOnLoad(Instance);
+        DontDestroyOnLoad(this);
         Instance = this;
+        Instance._AudioSource = Instance.GetComponent<AudioSource>();
     }
 
     public static void PlaySound(Sound _Sound)
     {
-        GameObject _SoundGameObject = new GameObject("Sound");
-        AudioSource _AudioSource = _SoundGameObject.AddComponent<AudioSource>();
         SoundAudioClip _SoundAudioClip = GetSoundAudioClip(_Sound);
         if(_SoundAudioClip != null && _SoundAudioClip._ConstraintFunction()) {
-            _AudioSource.PlayOneShot(_SoundAudioClip._AudioClip);
+            Instance._AudioSource.PlayOneShot(_SoundAudioClip._AudioClip);
         }
     }
 

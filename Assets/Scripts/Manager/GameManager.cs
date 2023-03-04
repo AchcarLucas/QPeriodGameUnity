@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         
-        DontDestroyOnLoad(Instance);
+        DontDestroyOnLoad(this);
         Instance = this;
     }
 }

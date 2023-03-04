@@ -96,6 +96,8 @@ public class CardElement : CommonElement, ISelectHandler
     public void TriggerSelected()
     {
         _CardAnimator.SetTrigger("Selected");
+
+        SoundManager.PlaySound(SoundManager.Sound.Selected);
     }
 
     public void TriggerUnselected()
@@ -106,17 +108,25 @@ public class CardElement : CommonElement, ISelectHandler
     public void TriggerMiss()
     {
         _CardAnimator.SetTrigger("Miss");
+
+        SoundManager.PlaySound(SoundManager.Sound.Miss);
     }
 
     public void ActiveFailed()
     {
         _CardAnimator.SetBool("Failed", true);
+
+        SoundManager.PlaySound(SoundManager.Sound.Failed);
+
         CurrentStatus = Settings.Status.FAILED;
     }
 
     public void ActiveSuccess()
     {
         _CardAnimator.SetBool("Success", true);
+
+        SoundManager.PlaySound(SoundManager.Sound.Success);
+
         CurrentStatus = Settings.Status.SUCCESS;
     }
 }
