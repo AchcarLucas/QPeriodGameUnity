@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public SaveManager _SaveManager;
     public EventScore _EventScore;
 
     public int GameScore = 0;
@@ -19,6 +20,10 @@ public class GameManager : MonoBehaviour
         
         DontDestroyOnLoad(this);
         Instance = this;
+
+        _SaveManager = new SaveManager();
+        _SaveManager.InitializeSaveManager();
+        _SaveManager.LoadRanking();
     }
 
     public void TriggerScoreLogic(int gain)

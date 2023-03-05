@@ -13,6 +13,8 @@ public class SaveManager
 
     public void InitializeSaveManager()
     {
+        Debug.Log(Application.persistentDataPath);
+
         for(int index = 0; index < GetMaxRankingDataArray(); ++index)
         {
             StructData data = new StructData();
@@ -53,7 +55,7 @@ public class SaveManager
 
                 Debug.Log("RankingDataArray loaded");
             } else {
-                Debug.LogError(FilePath + " don't exist");
+                Debug.LogWarning(FilePath + " don't exist");
             }
 
             return true;
