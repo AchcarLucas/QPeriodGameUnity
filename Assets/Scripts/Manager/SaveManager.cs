@@ -84,12 +84,18 @@ public class SaveManager
         return null;
     }
 
+    public bool CheckAreIntoRanking(int score)
+    {
+        if(RankingDataArray[MAX_RANKING - 1].game_score < score)
+            return true;
+
+        return false;
+    }
+
     public bool InsertIntoRankingData(StructData data)
     {
-        // verifica se o GameScore atual é menor que o game_score posterior
-        // se for, coloca na última e faz o sorted
-
-        if(RankingDataArray[MAX_RANKING - 1].game_score < data.game_score) {
+        // verifica se está no ranking, se estiver, salva no ranking e retorna true
+        if(CheckAreIntoRanking(data.game_score)) {
             RankingDataArray[MAX_RANKING - 1] = data;
             // Refaz a ordenação
             SortedRankingDataArray();
