@@ -10,10 +10,12 @@ public class GameManager : MonoBehaviour
 
     public SaveManager _SaveManager;
 
+    public String RankingName = Helper.GenerateRandomName();
+
     private uint GameScore = 0;
     private uint GameTime = 0;
 
-    private void Awake() 
+    private void Awake()
     {
         if(Instance != null) {
             Destroy(gameObject);

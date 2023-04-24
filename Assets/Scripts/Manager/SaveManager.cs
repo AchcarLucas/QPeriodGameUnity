@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class SaveManager
 {
-    private const int MAX_RANKING = 10;
+    private const int MAX_RANKING = 100;
     private StructData[] RankingDataArray = new StructData[SaveManager.MAX_RANKING];
 
     public void InitializeSaveManager()

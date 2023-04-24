@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 public class RankingSystem : MonoBehaviour
 {
     public GameObject RankingTemplate;
+
+    private const int DISPLAY_MAX_RANKING = 10;
     
     public void Start()
     {
@@ -12,7 +15,7 @@ public class RankingSystem : MonoBehaviour
 
         StructData[] RankingDataArray = _SaveManager.GetRankingDataArray();
         
-        for(int index = 0; index < _SaveManager.GetMaxRankingDataArray(); ++index) {    
+        for(int index = 0; index < Math.Min(_SaveManager.GetMaxRankingDataArray(), DISPLAY_MAX_RANKING); ++index) {    
             RectTransform Rect = this.GetComponent<RectTransform>();
             
             GameObject RankingColumn = GameObject.Instantiate(

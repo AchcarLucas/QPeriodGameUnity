@@ -56,7 +56,7 @@ public class SaveDataTest : MonoBehaviour
         {
             StructData data = new StructData();
 
-            data.name = GenerateRandomName();
+            data.name = Helper.GenerateRandomName();
             data.game_score = GenerateGameScore();
             data.game_time = GenerateGameSecundTime();
 
@@ -70,20 +70,13 @@ public class SaveDataTest : MonoBehaviour
     {
         StructData data = new StructData();
 
-        data.name = GenerateRandomName();
+        data.name = Helper.GenerateRandomName();
         data.game_score = GenerateGameScore();
         data.game_time = GenerateGameSecundTime();
 
         _SaveManager.InsertIntoRankingData(data);
+
         Debug.Log("[Insert] - Name: " + data.name + " GameScore: " + data.game_score + " Secunds: " + data.game_time);
-
-        StructData data_2 = (StructData)data.Clone();
-
-        data_2.game_score += 1;
-
-        _SaveManager.InsertIntoRankingData(data_2);
-
-        Debug.Log("[Insert] - Name: " + data_2.name + " GameScore: " + data_2.game_score + " Secunds: " + data_2.game_time);
     }
 
     private uint GenerateGameSecundTime()
@@ -102,21 +95,5 @@ public class SaveDataTest : MonoBehaviour
     {
         System.Random r = new System.Random();
         return (uint)r.Next(0, 3776);
-    }
-
-    // https://stackoverflow.com/questions/42468014/creating-a-name-generator-for-unity-project-c-sharp
-    private string GenerateRandomName()
-    {
-        System.Random r = new System.Random();
-
-        string[] NameComponentFirst = new string[] {"Ge","Me","Ta","Bo","Ke","Ra","Ne","Mi" };
-        string[] NameComponentSecond = new string[] {"oo","ue","as","to","ra","me","io","so" };
-        string[] NameComponentThird = new string[] {"se.","matt.","lace.","fo.","cake.","end." };
-
-        string Name = NameComponentFirst[r.Next(0, NameComponentFirst.Length - 1)];
-        Name += NameComponentSecond[r.Next(0, NameComponentSecond.Length - 1)];
-        Name += NameComponentThird[r.Next(0, NameComponentThird.Length - 1)];
-
-        return Name;
     }
 }
