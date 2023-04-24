@@ -30,14 +30,14 @@ public class RankingSystem : MonoBehaviour
             RectRanking.anchoredPosition = position;
 
             RankingTemplateInfo Info = RankingColumn.GetComponent<RankingTemplateInfo>();
-            Info.SetIndex(index + 1);
+            Info.SetIndex((uint)index + 1);
             
             if(RankingDataArray[index].name != null) {
-                Debug.Log("[" + index + "] - Name: " + RankingDataArray[index].name + " GameScore: " + RankingDataArray[index].game_score + " Minutes: " + RankingDataArray[index].minutes);
+                Debug.Log("[" + index + "] - Name: " + RankingDataArray[index].name + " GameScore: " + RankingDataArray[index].game_score + " Secunds: " + RankingDataArray[index].game_time);
 
                 Info.SetName(RankingDataArray[index].name);
                 Info.SetScore(RankingDataArray[index].game_score);
-                Info.SetTime(RankingDataArray[index].minutes);
+                Info.SetTime(RankingDataArray[index].game_time);
             }
         }
     }

@@ -16,17 +16,17 @@ public class RankingTemplateInfo : MonoBehaviour
         _Name.text = name;
     }
 
-    public void SetScore(int score)
+    public void SetScore(uint score)
     {
         _Score.text = score.ToString();
     }
 
-    public void SetTime(int time)
+    public void SetTime(uint time)
     {
         _Time.text = time.ToString();
     }
 
-    public void SetIndex(int index)
+    public void SetIndex(uint index)
     {
         _Index.text = index.ToString();
     }

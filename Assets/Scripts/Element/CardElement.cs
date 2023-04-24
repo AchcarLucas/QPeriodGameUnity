@@ -87,10 +87,10 @@ public class CardElement : CommonElement, ISelectHandler
         EditAttemptText();
     }
 
-    public int CalculateScore()
+    public uint CalculateScore()
     {
         // O score é calculado em potência de 2
-        return (int)Mathf.Pow(2, _CurrentAttempt);
+        return (uint)Mathf.Pow(2, _CurrentAttempt);
     }
 
     public void TriggerSelected()

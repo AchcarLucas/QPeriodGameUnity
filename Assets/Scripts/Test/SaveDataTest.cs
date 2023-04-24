@@ -43,7 +43,7 @@ public class SaveDataTest : MonoBehaviour
         
         for(int index = 0; index < _SaveManager.GetMaxRankingDataArray(); ++index) {
             if(RankingDataArray[index].name != null) {
-                Debug.Log("[" + index + "] - Name: " + RankingDataArray[index].name + " GameScore: " + RankingDataArray[index].game_score + " Minutes: " + RankingDataArray[index].minutes);
+                Debug.Log("[" + index + "] - Name: " + RankingDataArray[index].name + " GameScore: " + RankingDataArray[index].game_score + " Secunds: " + RankingDataArray[index].game_time);
             }
         }
     }
@@ -58,7 +58,7 @@ public class SaveDataTest : MonoBehaviour
 
             data.name = GenerateRandomName();
             data.game_score = GenerateGameScore();
-            data.minutes = GenerateMinutesTime();
+            data.game_time = GenerateGameSecundTime();
 
             _SaveManager.InsertIntoRankingData(data);
         }
@@ -72,24 +72,36 @@ public class SaveDataTest : MonoBehaviour
 
         data.name = GenerateRandomName();
         data.game_score = GenerateGameScore();
-        data.minutes = GenerateMinutesTime();
+        data.game_time = GenerateGameSecundTime();
 
         _SaveManager.InsertIntoRankingData(data);
+        Debug.Log("[Insert] - Name: " + data.name + " GameScore: " + data.game_score + " Secunds: " + data.game_time);
 
-        Debug.Log("[Insert] - Name: " + data.name + " GameScore: " + data.game_score + " Minutes: " + data.minutes);
+        StructData data_2 = (StructData)data.Clone();
+
+        data_2.game_score += 1;
+
+        _SaveManager.InsertIntoRankingData(data_2);
+
+        Debug.Log("[Insert] - Name: " + data_2.name + " GameScore: " + data_2.game_score + " Secunds: " + data_2.game_time);
     }
 
-    private int GenerateMinutesTime()
+    private uint GenerateGameSecundTime()
     {
         System.Random r = new System.Random();
         TimeSpan Diff = DateTime.Now.AddMinutes(r.Next(100, 10000)) - DateTime.Now;
-        return (int)(Diff.TotalSeconds / 60);
+        return (uint)Diff.TotalSeconds;
     }
 
-    private int GenerateGameScore()
+    private uint GenerateGameMinuteTime()
+    {
+        return (uint)(GenerateGameSecundTime() / 60);
+    }
+
+    private uint GenerateGameScore()
     {
         System.Random r = new System.Random();
-        return r.Next(0, 3776);
+        return (uint)r.Next(0, 3776);
     }
 
     // https://stackoverflow.com/questions/42468014/creating-a-name-generator-for-unity-project-c-sharp

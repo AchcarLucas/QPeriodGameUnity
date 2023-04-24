@@ -685,8 +685,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21258748c79dfb7994f6dee937ad723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _EventScore: {fileID: 0}
-  GameScore: 0
 --- !u!4 &1722737034
 Transform:
   m_ObjectHideFlags: 0
@@ -709,6 +707,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 278875445}
     m_Modifications:
+    - target: {fileID: 6285256866219884461, guid: 8f765a35df813a2498430a4a628c644e, type: 3}
+      propertyPath: m_text
+      value: Tempo (segundos)
+      objectReference: {fileID: 0}
     - target: {fileID: 6285256867420673740, guid: 8f765a35df813a2498430a4a628c644e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

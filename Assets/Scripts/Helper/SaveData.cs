@@ -3,9 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 
 [System.Serializable]
-public class StructData
+public class StructData : ICloneable
 {
     public string name;
-    public int game_score;
-    public int minutes;
+    public uint game_score;
+    public uint game_time;
+
+    public object Clone()
+    {
+        return this.MemberwiseClone();
+    }
 }

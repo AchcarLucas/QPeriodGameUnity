@@ -9,8 +9,8 @@ using TMPro;
 public class GameScoreText : MonoBehaviour
 {
     [HideInInspector]
-    public static int _CurrentGameScore = 0;
-    public static int _TransitoryGameScore = 0;
+    public static uint _CurrentGameScore = 0;
+    public static uint _TransitoryGameScore = 0;
 
     private Animator _GameScoreAnimator;
 
@@ -28,7 +28,7 @@ public class GameScoreText : MonoBehaviour
         _GameScoreText.text = "Score: " + _CurrentGameScore.ToString();
     }
 
-    public void ChangeGameScoreText(int score)
+    public void ChangeGameScoreText(uint score)
     {
        _TransitoryGameScore = score;
        _GameScoreAnimator.SetTrigger("AddOne");

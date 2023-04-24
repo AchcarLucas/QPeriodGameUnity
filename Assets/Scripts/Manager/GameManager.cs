@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -8,7 +10,8 @@ public class GameManager : MonoBehaviour
 
     public SaveManager _SaveManager;
 
-    public int GameScore = 0;
+    private uint GameScore = 0;
+    private uint GameTime = 0;
 
     private void Awake() 
     {
@@ -25,20 +28,37 @@ public class GameManager : MonoBehaviour
         _SaveManager.LoadRanking();
     }
 
-    public int GetGameScore()
+    public uint GetGameScore()
     {
         return GameScore;
     }
 
-    public void SetGameScore(int score)
+    public void SetGameScore(uint score)
     {
         GameScore = score;
     }
 
-    public int AddGameScore(int gain)
+    public uint AddGameScore(uint gain)
     {
         GameScore += gain;
         
         return GameScore;
+    }
+
+    public uint GetGameTime()
+    {
+        return GameTime;
+    }
+
+    public void SetGameTime(uint time)
+    {
+        GameTime = time;
+    }
+
+    public uint AddGameTime(uint inc)
+    {
+        GameTime += inc;
+        
+        return GameTime;
     }
 }

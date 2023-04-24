@@ -19,7 +19,7 @@ public class GainScoreText : MonoBehaviour
         _GainScoreText = this.GetComponent<TMP_Text>();
     }
 
-    public void ChangeGainScoreText(int gain)
+    public void ChangeGainScoreText(uint gain)
     {
         _GainScoreText.text = '+' + gain.ToString();
         _GainScoreAnimator.SetTrigger("JumpGainScore");

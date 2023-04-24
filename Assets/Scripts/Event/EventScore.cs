@@ -19,19 +19,19 @@ public class EventScore : MonoBehaviour
         Instance = this;
     }
 
-    protected void ChangeGainScoreText(int gain)
+    protected void ChangeGainScoreText(uint gain)
     {
         GainScoreObject.ChangeGainScoreText(gain);
     }
 
-    protected void ChangeGameScoreText(int score)
+    protected void ChangeGameScoreText(uint score)
     {
         GameScoreObject.ChangeGameScoreText(score);
     }
 
-    public void TriggerScoreLogic(int gain)
+    public void TriggerScoreLogic(uint gain)
     {
-        int GameScore = GameManager.Instance.AddGameScore(gain);
+        uint GameScore = GameManager.Instance.AddGameScore(gain);
 
         ChangeGainScoreText(gain);
         ChangeGameScoreText(GameScore);

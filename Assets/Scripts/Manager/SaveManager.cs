@@ -19,7 +19,7 @@ public class SaveManager
         {
             StructData data = new StructData();
             data.name = null;
-            data.game_score = data.minutes = 0;
+            data.game_score = data.game_time = 0;
             RankingDataArray[index] = data;
         }
     }
@@ -82,7 +82,7 @@ public class SaveManager
         return null;
     }
 
-    public bool CheckAreIntoRanking(int score)
+    public bool CheckAreIntoRanking(uint score)
     {
         if(RankingDataArray[MAX_RANKING - 1].game_score < score)
             return true;
@@ -118,7 +118,7 @@ public class SaveManager
         // Sort usando GameScore 
         Array.Sort<StructData>(RankingDataArray, delegate(StructData c1, StructData c2) {
                 if(c1.game_score.Equals(c2.game_score))
-                    return c1.minutes.CompareTo(c2.minutes);
+                    return c2.game_time.CompareTo(c1.game_time);
                 return c1.game_score.CompareTo(c2.game_score);
             });
 
