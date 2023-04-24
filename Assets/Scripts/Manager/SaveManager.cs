@@ -38,8 +38,6 @@ public class SaveManager
         catch (Exception e) {
             throw e;
         }
-
-        return false;
     }
 
     public bool LoadRanking(string FileData = "RankingData.dat")
@@ -63,8 +61,6 @@ public class SaveManager
         catch (Exception e) {
             throw e;
         }
-        
-        return false;
     }
 
     public int GetMaxRankingDataArray()

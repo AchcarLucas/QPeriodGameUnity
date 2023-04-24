@@ -45,7 +45,7 @@ public class TableOutlineElement : MonoBehaviour, IPointerClickHandler
                 ElementManager.Instance.CreateTableElement(SelectedCardElement);
                 SelectedCardElement.ActiveSuccess();
                 // Incrementa o GameScore
-                GameManager.Instance.TriggerScoreLogic(SelectedCardElement.CalculateScore());
+                EventScore.Instance.TriggerScoreLogic(SelectedCardElement.CalculateScore());
                 return;
             }
 

@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public SaveManager _SaveManager;
-    public EventScore _EventScore;
 
     public int GameScore = 0;
 
@@ -26,11 +25,20 @@ public class GameManager : MonoBehaviour
         _SaveManager.LoadRanking();
     }
 
-    public void TriggerScoreLogic(int gain)
+    public int GetGameScore()
+    {
+        return GameScore;
+    }
+
+    public void SetGameScore(int score)
+    {
+        GameScore = score;
+    }
+
+    public int AddGameScore(int gain)
     {
         GameScore += gain;
         
-        _EventScore.ChangeGainScoreText(gain);
-        _EventScore.ChangeGameScoreText(GameScore);
+        return GameScore;
     }
 }

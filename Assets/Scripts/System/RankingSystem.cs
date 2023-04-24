@@ -24,7 +24,7 @@ public class RankingSystem : MonoBehaviour
             
             Vector2 position = new Vector2(
                 Rect.anchoredPosition.x, 
-                (-1)*(index * RectRanking.rect.height) + RectRanking.rect.bottom
+                (-1)*(index * RectRanking.rect.height) + RectRanking.rect.yMax
             );
 
             RectRanking.anchoredPosition = position;
