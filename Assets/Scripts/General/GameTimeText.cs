@@ -11,18 +11,19 @@ using TMPro;
 public class GameTimeText : MonoBehaviour
 {
     [HideInInspector]
-    public static DateTime _StartTime = DateTime.Now;
-    public static DateTime _CurrentTime = _StartTime;
+    public DateTime _StartTime;
+    public DateTime _CurrentTime;
 
     // quantos segundos já se passaram até o inicio do jogo
-    public static uint Second = 0;
-    public static uint LastSecond = 0;
+    public uint Second = 0;
+    public uint LastSecond = 0;
     
     private TMP_Text _GameTimeText;
 
     public void Start()
     {
         _GameTimeText = this.GetComponent<TMP_Text>();
+        _StartTime = _CurrentTime = DateTime.Now;
     }
 
     public void FixedUpdate()
@@ -35,7 +36,7 @@ public class GameTimeText : MonoBehaviour
         if(Second != LastSecond) {
             LastSecond = Second;
             GameManager.Instance.SetGameTime(Second);
-            _GameTimeText.text = "Tempo: " + Second + " segundo(s)";
+            _GameTimeText.text = "Tempo: " + String.Format("{0:D2}", Second) + " segundo(s)";
         }
     }
 }

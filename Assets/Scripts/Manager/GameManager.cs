@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,8 +13,8 @@ public class GameManager : MonoBehaviour
 
     public string RankingName = Helper.GenerateRandomName();
 
-    private uint GameScore = 0;
-    private uint GameTime = 0;
+    public uint GameScore = 0;
+    public uint GameTime = 0;
 
     private void Awake()
     {
@@ -30,6 +31,35 @@ public class GameManager : MonoBehaviour
         _SaveManager.LoadRanking();
     }
 
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("Scene " + scene.name + " has Loaded");
+        
+        /*
+         Caso seja um Loaded de Scene e estiver indo para o Game ou para o Menu,
+         simplesmente damos um reset no jogo
+        */
+        if ((scene.name == "Game" || scene.name == "Menu") && Instance != null)
+            Instance.ResetGame();
+    }
+
+    public void ResetGame()
+    {
+        Debug.Log("Reset Game");
+
+        GameScore = GameTime = 0;
+    }
+
     public uint GetGameScore()
     {
         return GameScore;
@@ -44,7 +74,7 @@ public class GameManager : MonoBehaviour
     {
         GameScore += gain;
         
-        return GameScore;
+        return Instance.GameScore;
     }
 
     public uint GetGameTime()
