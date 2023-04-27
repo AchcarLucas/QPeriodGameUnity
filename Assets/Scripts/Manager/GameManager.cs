@@ -31,28 +31,6 @@ public class GameManager : MonoBehaviour
         _SaveManager.LoadRanking();
     }
 
-    void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        Debug.Log("Scene " + scene.name + " has Loaded");
-        
-        /*
-         Caso seja um Loaded de Scene e estiver indo para o Game ou para o Menu,
-         simplesmente damos um reset no jogo
-        */
-        if ((scene.name == "Game" || scene.name == "Menu") && Instance != null)
-            Instance.ResetGame();
-    }
-
     public void ResetGame()
     {
         Debug.Log("Reset Game");
@@ -102,5 +80,28 @@ public class GameManager : MonoBehaviour
     public string GetRankingName()
     {
         return RankingName;
+    }
+
+    /*
+     Quando o jogo terminar ou o usuário finalizar a partida,
+     essa função irá ser chamada para salvar o resultado no ranking
+     e mostrar o ranking para o usuário
+    */
+    public void FinishedMatch()
+    {
+        Debug.Log("FinishedMatch");
+
+        StructData data = new StructData();
+
+        data.name = RankingName;
+        data.game_score = GameScore;
+        data.game_time = GameTime;
+
+        try {
+            _SaveManager.InsertIntoRankingData(data);
+            _SaveManager.SaveRanking();
+        } catch (Exception e) {
+            Debug.LogException(e, this);
+        }
     }
 }
