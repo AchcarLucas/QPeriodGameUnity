@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     public SaveManager _SaveManager;
 
-    public String RankingName = Helper.GenerateRandomName();
+    public string RankingName = Helper.GenerateRandomName();
 
     private uint GameScore = 0;
     private uint GameTime = 0;
@@ -62,5 +62,15 @@ public class GameManager : MonoBehaviour
         GameTime += inc;
         
         return GameTime;
+    }
+
+    public void SetRankingName(string name)
+    {
+        RankingName = name;
+    }
+
+    public string GetRankingName()
+    {
+        return RankingName;
     }
 }

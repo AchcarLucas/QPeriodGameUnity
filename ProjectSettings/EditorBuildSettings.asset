@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/RankingInputName.unity
+    guid: cb4e79ef14f1b4e4c89a2a572478eeaa
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 785b5834e61478264bf65d0e1e72d640
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Ranking.unity
+    guid: 33d201782efa6febb8fda434d7b2b650
   m_configObjects: {}

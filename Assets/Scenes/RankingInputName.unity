@@ -488,7 +488,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Antes de continuar, por favor, insira um nome na qual voc\xEA gostaria
-    de ser chamado.\n\nO nome informado deve ter no m\xE1ximo 20 caracteres"
+    de ser chamado.\n\nO nome informado deve ter no m\xEDnimo 5 e no m\xE1ximo 20
+    caracteres"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -850,7 +851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21258748c79dfb7994f6dee937ad723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RankingName: Mitoend
+  RankingName: Meuefo
 --- !u!4 &1062460727
 Transform:
   m_ObjectHideFlags: 0
@@ -1080,6 +1081,7 @@ GameObject:
   - component: {fileID: 1646674041}
   - component: {fileID: 1646674040}
   - component: {fileID: 1646674039}
+  - component: {fileID: 1646674042}
   m_Layer: 5
   m_Name: InputRankingName
   m_TagString: Untagged
@@ -1187,7 +1189,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1646674042}
+        m_TargetAssemblyTypeName: InputRankingName, Assembly-CSharp
+        m_MethodName: OnRankingNameChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1244,6 +1258,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646674037}
   m_CullTransparentMesh: 1
+--- !u!114 &1646674042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646674037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9af1164acdeac8942aa2bff88282612c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ContinueButton: {fileID: 2050999973}
 --- !u!1 &2050999971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,6 +1283,7 @@ GameObject:
   - component: {fileID: 2050999975}
   - component: {fileID: 2050999974}
   - component: {fileID: 2050999973}
+  - component: {fileID: 2050999976}
   m_Layer: 5
   m_Name: Continuar
   m_TagString: Untagged
@@ -1309,7 +1337,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.31132078, g: 0.3098523, b: 0.3098523, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1327,7 +1355,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2050999974}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2050999976}
+        m_TargetAssemblyTypeName: ButtonChangeScene, Assembly-CSharp
+        m_MethodName: OnChangeSceneButtonClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Menu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2050999974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1366,6 +1406,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050999971}
   m_CullTransparentMesh: 1
+--- !u!114 &2050999976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050999971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e7c0c45194309047a1bf1bd7b727293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2069171070
 GameObject:
   m_ObjectHideFlags: 0
