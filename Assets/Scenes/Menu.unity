@@ -908,7 +908,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 1901022374}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -1800,8 +1800,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 83889407
-  m_fontColor: {r: 1, g: 0.0484327, b: 0, a: 0.019607844}
+    rgba: 33557759
+  m_fontColor: {r: 1, g: 0.0484327, b: 0, a: 0.007843138}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2298,8 +2298,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Bem vindo {name}\nBora brincar com a qu\xEDmica ?"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7e5faef4c836420448888c43e4384011, type: 2}
+  m_sharedMaterial: {fileID: -2566209599901340237, guid: 7e5faef4c836420448888c43e4384011, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

@@ -491,8 +491,8 @@ MonoBehaviour:
     de ser chamado.\n\nO nome informado deve ter no m\xEDnimo 5 e no m\xE1ximo 20
     caracteres"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7e5faef4c836420448888c43e4384011, type: 2}
+  m_sharedMaterial: {fileID: -2566209599901340237, guid: 7e5faef4c836420448888c43e4384011, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 685737285}
   - component: {fileID: 685737284}
   m_Layer: 0
-  m_Name: Name
+  m_Name: WhatAreyourName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -790,8 +790,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 83889407
-  m_fontColor: {r: 1, g: 0.0484327, b: 0, a: 0.019607844}
+    rgba: 33557759
+  m_fontColor: {r: 1, g: 0.0484327, b: 0, a: 0.007843138}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
