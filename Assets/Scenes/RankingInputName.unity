@@ -1024,6 +1024,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RankingName: Meuefo
+  GameScore: 0
+  GameTime: 0
 --- !u!4 &1062460727
 Transform:
   m_ObjectHideFlags: 0
@@ -1456,6 +1458,8 @@ GameObject:
   - component: {fileID: 2050999974}
   - component: {fileID: 2050999973}
   - component: {fileID: 2050999976}
+  - component: {fileID: 2050999978}
+  - component: {fileID: 2050999977}
   m_Layer: 5
   m_Name: Continuar
   m_TagString: Untagged
@@ -1590,6 +1594,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e7c0c45194309047a1bf1bd7b727293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2050999977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050999971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ed1ae9fb74c61b9813a71ec9c456b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &2050999978
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050999971}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6b4ef1ec5a1901c4890d412ce989d5f5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2069171070
 GameObject:
   m_ObjectHideFlags: 0

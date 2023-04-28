@@ -6,13 +6,21 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Button))]
 public class Hover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private Animator _Animator;
+    private Button _Button;
 
     public void Start()
     {
         _Animator = gameObject.GetComponent<Animator>();
+        _Button = gameObject.GetComponent<Button>();
+    }
+
+    public void LateUpdate()
+    {
+        SetInteractable(_Button.IsInteractable());
     }
 
     /*
@@ -34,4 +42,8 @@ public class Hover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         _Animator.SetBool("Hover", status);
     }
 
+    private void SetInteractable(bool status)
+    {
+        _Animator.SetBool("Interactable", status);
+    }
 }
