@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class SinglotonDontDestroyReference : MonoBehaviour
 {
+    /*
+        Classe responsável por manter referência de
+        algumas funções do GameManager
+    */
     public static GameManager GameManager_Instance = null;
 
     public void Awake()

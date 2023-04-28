@@ -91,17 +91,20 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("FinishedMatch");
 
-        StructData data = new StructData();
+        // Só vamos salvar no ranking se o jogador fez alguma jogada na partida
+        if(GameScore > 0) {
+            StructData data = new StructData();
 
-        data.name = RankingName;
-        data.game_score = GameScore;
-        data.game_time = GameTime;
+            data.name = RankingName;
+            data.game_score = GameScore;
+            data.game_time = GameTime;
 
-        try {
-            _SaveManager.InsertIntoRankingData(data);
-            _SaveManager.SaveRanking();
-        } catch (Exception e) {
-            Debug.LogException(e, this);
+            try {
+                _SaveManager.InsertIntoRankingData(data);
+                _SaveManager.SaveRanking();
+            } catch (Exception e) {
+                Debug.LogException(e, this);
+            }
         }
     }
 }
