@@ -449,9 +449,10 @@ MonoBehaviour:
   m_text: "<color=\"yellow\"><b>Game Design Document (GDD)</b></color>\nLucas Campos
     Achcar\n\n<color=\"yellow\"><b>Game Code</b></color>\nLucas Campos Achcar\n\n<color=\"yellow\"><b>Graphics</b></color>\nLucas
     Campos Achcar\npixel9sprite by gumroad\n\n<color=\"yellow\"><b>Animation</b></color>\nLucas
-    Campos Achcar\n\n<color=\"yellow\"><b>Shaders</b></color>\nLucas Campos Achcar\n\n<color=\"yellow\"><b>Engine</b></color>\nUnity3D\n\n<color=\"yellow\"><b>Spacial
-    Thanks</b></color>\nElizabeth do Carmo Campos\nPatr\xEDcia Oliveira\n\n<color=\"yellow\"><b>This
-    software is free and can be found on github</b></color> https://github.com/AchcarLucas/QPeriodGameUnity\n\n<color=\"yellow\"><b>pixel9sprite
+    Campos Achcar\n\n<color=\"yellow\"><b>Shaders</b></color>\nLucas Campos Achcar\n\n<color=\"yellow\"><b>Engine
+    Code</b></color>\nUnity3D\n\n<color=\"yellow\"><b>Spacial Thanks</b></color>\nElizabeth
+    do Carmo Campos\nPatr\xEDcia Oliveira\n\n<color=\"yellow\"><b>This software is
+    free and can be found on github</b></color> https://github.com/AchcarLucas/QPeriodGameUnity\n\n<color=\"yellow\"><b>pixel9sprite
     that was used</b></color>\nhttps://unicornone.gumroad.com/l/pixel9sprite\n "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7e5faef4c836420448888c43e4384011, type: 2}
