@@ -1831,7 +1831,8 @@ MonoBehaviour:
     de 5 tentativas poss\xEDveis, a cada erro, um ponto \xE9 decrementado da carta
     e quanto mais erro, menor \xE9 o score ganho no acerto. Se o elemento n\xE3o
     tiver seu acerto em 5 tentativas, o elemento \xE9 revelado e nenhum score \xE9
-    ganho."
+    ganho.\nPara acessar os outros elementos, arraste com o mouse para a direita
+    ou esquerda"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7e5faef4c836420448888c43e4384011, type: 2}
   m_sharedMaterial: {fileID: -2566209599901340237, guid: 7e5faef4c836420448888c43e4384011, type: 2}
@@ -2454,11 +2455,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Aqui temos a tabela peri\xF3dica, os n\xFAmeros na horizontal representam
-    o grupo ou fam\xEDlia e os n\xFAmeros verticais representam o per\xEDodo do elemento.
-    Ao centro, temos as caixinhas com a representa\xE7\xE3o do n\xFAmero at\xF4mico
-    do elemento. No centro inferior temos a sele\xE7\xE3o das cartas de elementos.\nNavegue
-    usando        para mais detalhes"
+  m_text: "Aqui temos a tabela peri\xF3dica, os n\xFAmeros na vertical representam
+    o grupo ou fam\xEDlia e os n\xFAmeros na horizontal representam o per\xEDodo
+    do elemento. Ao centro, temos as caixinhas com a representa\xE7\xE3o do n\xFAmero
+    at\xF4mico do elemento. No centro inferior temos a sele\xE7\xE3o das cartas de
+    elementos.\nNavegue usando        para mais detalhes"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7e5faef4c836420448888c43e4384011, type: 2}
   m_sharedMaterial: {fileID: -2566209599901340237, guid: 7e5faef4c836420448888c43e4384011, type: 2}
@@ -3338,9 +3339,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ao centro temos a tabela peri\xF3dico, os n\xFAmeros informado nas caixas
-    \xE9 referente ao n\xFAmero at\xF3mico do elemento, com uma carta de um elemento
-    selecionado, basta selecionar o n\xFAmero para associar o elemento a sua posi\xE7\xE3o
+  m_text: "Na tabela peri\xF3dico (parte central), os n\xFAmeros informado nas caixas
+    \xE9 referente ao n\xFAmero at\xF4mico do elemento, com uma carta de um elemento
+    selecionado, basta clicar na caixa para associar o elemento a sua posi\xE7\xE3o
     na tabela peri\xF3dico."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7e5faef4c836420448888c43e4384011, type: 2}
@@ -4954,7 +4955,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -80.0002, y: 50.00004}
+  m_AnchoredPosition: {x: -80.00018, y: 50.00003}
   m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1637429940
@@ -5474,8 +5475,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Aqui est\xE3o seus elementos em formato de cartas, basta selecionar um
-    elemento e selecionar um n\xFAmero \xE1tomico na tabela peri\xF3dica (parte central
-    do jogo)."
+    elemento (carta) e clicar um n\xFAmero at\xF4mico na tabela peri\xF3dica (parte
+    central)."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7e5faef4c836420448888c43e4384011, type: 2}
   m_sharedMaterial: {fileID: -2566209599901340237, guid: 7e5faef4c836420448888c43e4384011, type: 2}
