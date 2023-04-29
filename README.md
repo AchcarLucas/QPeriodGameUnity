@@ -1,5 +1,9 @@
 ## QPeriodGameUnity
 
+```diff
++ Programado na Unity3D versão 2021.3.3f1 
+```
+
 Um jogo divertido para aprender química.
 
 **Dispute com seus amigos para saber quem sabe mais sobre a tabela periódico!!**
