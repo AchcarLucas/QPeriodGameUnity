@@ -28,8 +28,8 @@ public class ElementManager : MonoBehaviour
         
         Instance = this;
         
-        StructChemicalElements = Helper.Shuffle(Creator.CreateChemicalElements());
-        // StructChemicalElements = Creator.CreateChemicalElements();
+        // StructChemicalElements = Helper.Shuffle(Creator.CreateChemicalElements());
+        StructChemicalElements = Creator.CreateChemicalElements();
     }
 
     /*
