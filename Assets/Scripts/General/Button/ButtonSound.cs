@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -13,10 +14,10 @@ public class ButtonSound : MonoBehaviour, IPointerEnterHandler
     public bool SoundOnHover = true;
     public bool SoundOnConfirm = true;
 
-    [ShowIf(ActionOnConditionFail.DontDraw, ConditionOperator.And, nameof(SoundOnHover))]
+    [ShowWhen("SoundOnHover")]
     public SoundManager.Sound TypeSoundOnHover = SoundManager.Sound.SELECTED;
 
-    [ShowIf(ActionOnConditionFail.DontDraw, ConditionOperator.And, nameof(SoundOnConfirm))]
+    [ShowWhen("SoundOnConfirm")]
     public SoundManager.Sound TypeSoundOnConfirm = SoundManager.Sound.CONFIRM_1;
 
     public void Awake()
