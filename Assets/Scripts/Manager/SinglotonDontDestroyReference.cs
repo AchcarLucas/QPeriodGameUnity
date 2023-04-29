@@ -24,4 +24,14 @@ public class SinglotonDontDestroyReference : MonoBehaviour
     {
         GameManager_Instance.FinishedMatch();
     }
+
+    public void StartingCountTime()
+    {
+        GameManager_Instance.StartingCountTime();
+    }
+
+    public void StoppingCountTime()
+    {
+        GameManager_Instance.StoppingCountTime();
+    }
 }

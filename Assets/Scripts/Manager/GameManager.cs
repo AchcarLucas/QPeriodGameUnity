@@ -16,6 +16,14 @@ public class GameManager : MonoBehaviour
     public uint GameScore = 0;
     public uint GameTime = 0;
 
+    public bool HasCountTime = false;
+
+    private DateTime _StartTime;
+    private DateTime _CurrentTime;
+
+    private uint _Second = 0;
+    private uint _LastSecond = 0;
+
     private void Awake()
     {
         if(Instance != null) {
@@ -29,6 +37,34 @@ public class GameManager : MonoBehaviour
         _SaveManager = new SaveManager();
         _SaveManager.InitializeSaveManager();
         _SaveManager.LoadRanking();
+    }
+
+    public void FixedUpdate()
+    {
+        if(HasCountTime && !ElementManager.Instance.IsEndGame())
+        {
+            _CurrentTime = DateTime.Now;
+            
+            TimeSpan TimePassed = _CurrentTime - _StartTime;
+
+            _Second = (uint)TimePassed.TotalSeconds;
+
+            if(_Second != _LastSecond) {
+                _LastSecond = _Second;
+                SetGameTime(_Second);
+            }
+        }
+    }
+
+    public void StartingCountTime()
+    {
+        HasCountTime = true;
+        _StartTime = _CurrentTime = DateTime.Now;
+    }
+
+    public void StoppingCountTime()
+    {
+        HasCountTime = false;
     }
 
     public void ResetGame()

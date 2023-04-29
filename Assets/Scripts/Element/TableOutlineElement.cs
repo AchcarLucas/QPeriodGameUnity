@@ -44,8 +44,10 @@ public class TableOutlineElement : MonoBehaviour, IPointerClickHandler
             this.OwnStructChemicalElement.AtomicNumber) {
                 ElementManager.Instance.CreateTableElement(SelectedCardElement);
                 SelectedCardElement.ActiveSuccess();
+                
                 // Incrementa o GameScore
                 EventScore.Instance.TriggerScoreLogic(SelectedCardElement.CalculateScore());
+
                 return;
             }
 

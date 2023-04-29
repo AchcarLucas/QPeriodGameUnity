@@ -72,4 +72,10 @@ public class ElementManager : MonoBehaviour
 
         return true;
     }
+
+    public bool IsEndGame()
+    {
+        GameObject[] ElementCards = GameObject.FindGameObjectsWithTag(Settings.TagNameTableElementOutline);
+        return !(ElementCards.Length > 0);
+    }
 }

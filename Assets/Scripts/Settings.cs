@@ -8,6 +8,9 @@ public class Settings
     static public string BaseNameTableElement = "TableElementObject_";
     static public string BaseNameCardElement = "CardElementObject_";
 
+    static public string TagNameElementCard = "ElementCard";
+    static public string TagNameTableElementOutline = "ElementTableOutline";
+
     public enum Status
     {
         NONE,

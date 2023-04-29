@@ -16,7 +16,6 @@ public class SortingLayerTextTMPEditor : Editor
 
         script.SortingOrder = EditorGUILayout.IntField("Sorting Order", script.SortingOrder);
 
-
         TextMeshProUGUI t = script.gameObject.GetComponent<TextMeshProUGUI>();
 
         if (t != null)
