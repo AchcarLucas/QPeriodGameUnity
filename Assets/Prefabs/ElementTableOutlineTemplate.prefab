@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 850037306683639626}
   - component: {fileID: 2173799163668589367}
   - component: {fileID: 3265951811603316038}
+  - component: {fileID: 8039892130317444708}
   m_Layer: 5
   m_Name: ElementTableOutlineTemplate
   m_TagString: ElementTableOutline
@@ -292,7 +293,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b4948db073b4146831f7196ba5b320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ElementTableTemplate: {fileID: 1102619878895545296, guid: a6dd2753ad40c2142a9869f723e2115f, type: 3}
   OwnStructChemicalElement:
     Column: 0
     Line: 0
@@ -313,3 +313,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ed1ae9fb74c61b9813a71ec9c456b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8039892130317444708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8677438641602731674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90312f7fc4d46c141b935098c04f4314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundOnHover: 1
+  SoundOnConfirm: 0
+  TypeSoundOnHover: 3
+  TypeSoundOnConfirm: 4

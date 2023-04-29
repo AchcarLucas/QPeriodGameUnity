@@ -7,17 +7,17 @@ using UnityEngine.EventSystems;
 
 public class EnableOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public List<GameObject> ObjectList;
-    public List<GameObject> ObjectReverseList;
+    public List<GameObject> ObjectActiveList;
+    public List<GameObject> ObjectReverseActiveList;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        foreach (GameObject _object in ObjectList)
+        foreach (GameObject _object in ObjectActiveList)
         {
             _object.SetActive(true);
         }
 
-        foreach (GameObject _object in ObjectReverseList)
+        foreach (GameObject _object in ObjectReverseActiveList)
         {
             _object.SetActive(false);
         }
@@ -25,12 +25,12 @@ public class EnableOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     
     public void OnPointerExit(PointerEventData eventData)
     {
-        foreach (GameObject _object in ObjectList)
+        foreach (GameObject _object in ObjectActiveList)
         {
             _object.SetActive(false);
         }
 
-        foreach (GameObject _object in ObjectReverseList)
+        foreach (GameObject _object in ObjectReverseActiveList)
         {
             _object.SetActive(true);
         }

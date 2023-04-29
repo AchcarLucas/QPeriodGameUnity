@@ -8,10 +8,12 @@ public class SoundManager : MonoBehaviour
 
     public enum Sound 
     {
-        Miss,
-        Failed,
-        Success,
-        Selected
+        MISS,
+        FAILED,
+        SUCCESS,
+        SELECTED,
+        CONFIRM_1,
+        CONFIRM_2
     }
 
     /*
